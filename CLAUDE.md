@@ -10,7 +10,7 @@
 - **Timezone:** America/Toronto
 - **Positioning:** Bradford's **pharmacist-led holistic health hub** — a "one-stop shop" that bridges
   traditional pharmacy with natural/holistic wellness under one roof.
-- **Shipping:** Free Canada-wide shipping over $99.
+- **Free shipping tiers:** Local Bradford **$75+** · GTA **$99+** · outside Ontario **$178+**.
 
 ## Business model
 Integrative / holistic pharmacy. We blend conventional pharmacy care with nutrition and naturopathic
@@ -49,7 +49,7 @@ credibility and "evidence-informed" language. Educational, never hypey. Whole-pe
 - **Wellness Wednesday** = Registered Holistic Nutritionist voice (holistic lifestyle / education).
 - **Pharmacy Friday** = Pharmacist voice (clinical-but-holistic; meds, supplements, safety).
 - **Recurring reminder:** biweekly Google Calendar event (every 2 weeks) prompts a new batch.
-- **CTA hooks:** book a consult (nutrition/naturopathic), "Ask Our Pharmacist", free shipping over $99.
+- **CTA hooks:** book a consult (nutrition/naturopathic), "Ask Our Pharmacist", free shipping (Bradford $75+ / GTA $99+ / outside ON $178+).
 - **Sign-off:** The WellnessRX Pharmacy Team — Pharmacist + Holistic Nutritionist.
 
 ## Compliance notes (Ontario pharmacy)
