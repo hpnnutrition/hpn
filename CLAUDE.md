@@ -52,6 +52,23 @@ credibility and "evidence-informed" language. Educational, never hypey. Whole-pe
 - **CTA hooks:** book a consult (nutrition/naturopathic), "Ask Our Pharmacist", free shipping (Bradford $75+ / GTA $99+ / outside ON $178+).
 - **Sign-off:** The WellnessRX Pharmacy Team — Pharmacist + Holistic Nutritionist.
 
+## Standard email footer (append to every email)
+```
+———————————————
+WellnessRX Pharmacy — Bradford's pharmacist-led holistic health hub
+📍 152 Holland St E, Bradford West Gwillimbury, ON L3Z 1G4
+📞 [PHONE]  ·  🕐 [HOURS]  ·  🌐 wellnessrxpharmacy.ca
+🚚 Free shipping: Bradford $75+ · GTA $99+ · rest of Ontario $178+
+
+Book a consult: [BOOKING LINK]   |   Ask our pharmacist: [reply to this email]
+
+This email is for general education and is not medical advice. Talk to our
+pharmacist or your healthcare provider before making changes to medications
+or supplements. You're receiving this because you're part of the WellnessRX
+community. [Unsubscribe] · [Update preferences]
+```
+Placeholders to confirm with client: [PHONE], [HOURS], [BOOKING LINK], unsubscribe/preferences (handled by email platform — Mailchimp/etc.).
+
 ## Compliance notes (Ontario pharmacy)
 - Keep health claims general, educational, and evidence-informed; no guarantees or disease-cure claims.
 - Avoid specific Rx drug brand promotion and specific dosing in mass emails.
