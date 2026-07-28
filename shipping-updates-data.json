@@ -1,0 +1,105 @@
+{
+  "project": "WellnessRX Pharmacy - Shipping Messaging Updates",
+  "branch": "claude/shipping-messaging-updates-29rxtr",
+  "date": "2026-07-28",
+  "correct_tiers": {
+    "bradford_simcoe": "$75+",
+    "gta": "$99+",
+    "outside_ontario": "$179+"
+  },
+  "updates": [
+    {
+      "id": 1,
+      "location": "Global Popup",
+      "priority": "HIGHEST",
+      "page_scope": "site-wide",
+      "current_message": "Canada-wide $150+",
+      "new_message": "Free shipping: Bradford & Simcoe County $75+ · GTA $99+ · Outside Ontario $179+",
+      "action": "REPLACE",
+      "notes": "Appears across many pages - biggest visibility issue"
+    },
+    {
+      "id": 2,
+      "location": "Top Announcement/Header Bar",
+      "priority": "HIGH",
+      "page_scope": "site-wide",
+      "current_message": "[Incomplete - missing GTA $99+ and Outside Ontario $179+]",
+      "new_message": "Free shipping: Bradford & Simcoe County $75+ · GTA $99+ · Outside Ontario $179+",
+      "action": "UPDATE",
+      "notes": "Visible on every page - ensure all three tiers displayed"
+    },
+    {
+      "id": 3,
+      "location": "Terms & Conditions / Shipping Details Page",
+      "priority": "CRITICAL",
+      "page_scope": "dedicated-page",
+      "current_message": "[Outdated shipping thresholds section]",
+      "new_message": "Free Shipping\n\nWe offer free shipping on qualifying orders based on location:\n• Bradford & Simcoe County: $75+\n• Greater Toronto Area (GTA): $99+\n• Outside Ontario (Rest of Canada): $179+",
+      "action": "REPLACE_SECTION",
+      "notes": "Must match checkout experience - this is the authoritative page"
+    },
+    {
+      "id": 4,
+      "location": "Wellness Bundles Category",
+      "priority": "HIGH",
+      "page_scope": "category-page",
+      "current_message": "free shipping over $99 across Canada",
+      "new_message": "Free shipping: Outside Ontario $179+",
+      "action": "DELETE_OR_REPLACE",
+      "notes": "Remove incorrect $99 across Canada messaging"
+    },
+    {
+      "id": 5,
+      "location": "New Arrivals Category",
+      "priority": "HIGH",
+      "page_scope": "category-page",
+      "current_message": "Canada-wide $99",
+      "new_message": "Free shipping: Outside Ontario $179+",
+      "action": "DELETE_OR_REPLACE",
+      "notes": "Remove incorrect $99 messaging"
+    },
+    {
+      "id": 6,
+      "location": "Old Product Template Blocks",
+      "priority": "MEDIUM",
+      "page_scope": "product-pages",
+      "current_message": "GTA $150+",
+      "new_message": "[DELETE ENTIRELY]",
+      "action": "DELETE",
+      "notes": "Remove outdated GTA tier completely from legacy templates"
+    },
+    {
+      "id": 7,
+      "location": "Pet Blog",
+      "priority": "MEDIUM",
+      "page_scope": "blog-section",
+      "current_message": "[Missing outside Ontario tier]",
+      "new_message": "Shipping: Bradford & Simcoe $75+ · GTA $99+ · Outside Ontario $179+",
+      "action": "ADD_OR_UPDATE",
+      "notes": "Ensure pet blog includes all three shipping tiers"
+    }
+  ],
+  "standard_messaging_blocks": {
+    "short": "Free shipping: Bradford & Simcoe $75+ · GTA $99+ · Outside Ontario $179+",
+    "medium": "Free shipping on orders over:\n• Bradford & Simcoe County: $75+\n• GTA: $99+\n• Outside Ontario: $179+",
+    "long": "Free Shipping Thresholds\n\nWe provide free shipping on qualifying orders based on your location:\n• Bradford & Simcoe County: Free shipping on orders $75 or more\n• Greater Toronto Area (GTA): Free shipping on orders $99 or more\n• Outside Ontario (Rest of Canada): Free shipping on orders $179 or more"
+  },
+  "verification_checklist": [
+    "Global popup updated with all three tiers",
+    "Header bar shows complete shipping messaging",
+    "T&C/Shipping page matches checkout",
+    "Wellness Bundles messaging corrected",
+    "New Arrivals messaging corrected",
+    "Product templates cleaned of $150+ GTA messaging",
+    "Pet blog includes all three shipping tiers",
+    "All changes published to live site",
+    "Checkout flow tested and matches site messaging"
+  ],
+  "implementation_notes": {
+    "priority_order": [1, 2, 3, 4, 5, 6, 7],
+    "critical_path": [1, 3],
+    "estimated_time": "30-45 minutes",
+    "testing_required": true,
+    "goes_live": "immediately upon publish"
+  }
+}
