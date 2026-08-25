@@ -52,7 +52,7 @@ credibility and "evidence-informed" language. Educational, never hypey. Whole-pe
 - **CTA hooks:** book a consult (nutrition/naturopathic), "Ask Our Pharmacist", free shipping (Bradford & Simcoe $75+ / GTA $99+ / outside ON $179+).
 - **Booking link:** https://www.wellnessrxpharmacy.ca/book-appointment-bradford
 - **Phone:** 905-775-7874
-- **Hours:** Mon 9–6 · Tue 9–6 · Wed 10–8 · Thu 9–6 · Fri 9–6 · Sat 9–4 · Sun closed
+- **Hours:** Mon 9–6 · Tue 9–6 · Wed 10–7 · Thu 9–6 · Fri 9–6 · Sat 9–4 · Sun closed
 - **Sign-off:** The WellnessRX Pharmacy Team — Pharmacist + Holistic Nutritionist.
 
 ## Standard email footer (append to every email)
@@ -61,7 +61,7 @@ credibility and "evidence-informed" language. Educational, never hypey. Whole-pe
 WellnessRX Pharmacy — Bradford's pharmacist-led holistic health hub
 📍 152 Holland St E, Bradford West Gwillimbury, ON L3Z 1G4
 📞 905-775-7874  ·  🌐 wellnessrxpharmacy.ca
-🕐 Mon–Fri 9–6 (Wed til 8) · Sat 9–4 · Sun closed
+🕐 Mon, Tue, Thu, Fri 9–6 · Wed 10–7 · Sat 9–4 · Sun closed
 🚚 Free shipping: Bradford & Simcoe County $75+ · GTA $99+ · rest of Ontario $179+
 
 Book a consult: https://www.wellnessrxpharmacy.ca/book-appointment-bradford
