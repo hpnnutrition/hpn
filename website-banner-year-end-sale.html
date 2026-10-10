@@ -5,127 +5,140 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Year-End Markdown Sale</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;800;900&display=swap" rel="stylesheet">
 <style>
-  /* WellnessRX Year-End Markdown Sale banner
-     Paste this whole file into Wix: Add Elements > Embed Code > Embed HTML > "Code".
-     Suggested element size: full width x 220px desktop / 300px mobile. */
+  /* WellnessRX Pharmacy — Year-End Markdown Sale banner
+     Matches brand: white base, leafy greens (#30802f / #348433), bold black Montserrat,
+     spaced "HOLISTICARE"-style labels, cross + leaf motif.
+     Wix: Add Elements > Embed Code > Embed HTML > Code. Full width; set height ~340px on desktop and ~560px on the mobile view. */
   :root {
-    --sage-900: #1f3a2e;
-    --sage-700: #2f5944;
-    --sage-500: #5f8f74;
-    --cream: #fbf7ef;
-    --gold: #e2b555;
-    --gold-deep: #c8912c;
-    --blush: #f3d9c8;
+    --green: #30802f;
+    --green-deep: #1f5f1f;
+    --green-leaf: #4caf50;
+    --green-mint: #eaf5e6;
+    --ink: #111111;
+    --white: #ffffff;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { background: transparent; font-family: "Inter", system-ui, sans-serif; }
+  html, body { background: transparent; font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif; color: var(--ink); }
 
-  .wrx-banner {
+  .wrx {
     position: relative;
     overflow: hidden;
-    min-height: 220px;
-    padding: 28px clamp(16px, 4vw, 56px);
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: center;
-    gap: 24px;
-    color: var(--cream);
-    background:
-      radial-gradient(circle at 12% 120%, rgba(226,181,85,.35), transparent 45%),
-      radial-gradient(circle at 95% -20%, rgba(243,217,200,.25), transparent 40%),
-      linear-gradient(115deg, var(--sage-900) 0%, var(--sage-700) 55%, var(--sage-500) 100%);
     border-radius: 18px;
+    background: var(--white);
+    border: 1px solid #dcebd7;
+    box-shadow: 0 10px 30px rgba(48,128,47,.12);
   }
 
-  /* floating leaves + sparkles */
-  .wrx-float { position: absolute; pointer-events: none; opacity: .18; animation: drift 9s ease-in-out infinite; }
-  .wrx-float.l1 { top: -18px; left: 38%; width: 90px; animation-delay: 0s; }
-  .wrx-float.l2 { bottom: -26px; left: 58%; width: 120px; transform: rotate(140deg); animation-delay: -3s; }
-  .wrx-float.l3 { top: 20%; right: 2%; width: 60px; animation-delay: -6s; }
-  @keyframes drift {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(10px) rotate(8deg); }
+  /* ---- ticker strip ---- */
+  .wrx-ticker {
+    background: var(--green);
+    color: var(--white);
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 8px 0;
   }
-  .wrx-spark { position: absolute; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 12px var(--gold); animation: twinkle 2.8s ease-in-out infinite; }
-  .wrx-spark.s1 { top: 22%; left: 8%; }
-  .wrx-spark.s2 { top: 70%; left: 46%; animation-delay: -1s; }
-  .wrx-spark.s3 { top: 18%; left: 72%; animation-delay: -2s; }
-  @keyframes twinkle { 0%, 100% { opacity: .15; transform: scale(.6); } 50% { opacity: 1; transform: scale(1.2); } }
+  .wrx-ticker-track { display: inline-block; animation: scroll 28s linear infinite; }
+  .wrx-ticker-track span { padding: 0 18px; }
+  .wrx-ticker-track span::after { content: "✚"; margin-left: 36px; opacity: .75; }
+  @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-  .wrx-copy { position: relative; z-index: 1; min-width: 0; }
-  .wrx-eyebrow {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
-    color: var(--sage-900); background: var(--gold);
-    padding: 6px 12px; border-radius: 999px;
+  /* ---- main body ---- */
+  .wrx-body {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    min-height: 250px;
   }
-  .wrx-eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--sage-900); animation: pulse 1.4s infinite; }
-  @keyframes pulse { 50% { opacity: .25; } }
 
+  /* leafy corners like the tri-fold */
+  .leaf { position: absolute; pointer-events: none; animation: sway 7s ease-in-out infinite; transform-origin: bottom left; }
+  .leaf.a { left: -18px; bottom: -22px; width: 120px; }
+  .leaf.b { left: 46px; bottom: -34px; width: 80px; animation-delay: -2.5s; opacity: .7; }
+  .leaf.c { right: -14px; top: -16px; width: 96px; transform-origin: top right; animation-delay: -4s; }
+  @keyframes sway { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(5deg); } }
+
+  .wrx-copy {
+    position: relative; z-index: 1;
+    padding: 26px clamp(16px, 4vw, 48px) 26px clamp(16px, 4vw, 48px);
+    display: flex; flex-direction: column; justify-content: center; gap: 10px;
+  }
+  .wrx-label {
+    font-size: 12px; font-weight: 600; letter-spacing: .32em; text-transform: uppercase; color: var(--green);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .wrx-label::before { content: ""; width: 26px; height: 2px; background: var(--green); }
   .wrx-title {
-    font-family: "Fraunces", Georgia, serif;
-    font-weight: 700;
-    font-size: clamp(28px, 4.2vw, 50px);
-    line-height: 1.02;
-    margin: 12px 0 8px;
+    font-weight: 900;
+    font-size: clamp(30px, 4vw, 50px);
+    line-height: 1.05;
+    letter-spacing: -.01em;
   }
-  .wrx-title em { font-style: normal; color: var(--gold); }
+  .wrx-title span { color: var(--green); }
+  .wrx-sub { font-size: 14px; font-weight: 500; color: #3a3a3a; max-width: 480px; line-height: 1.5; }
 
-  .wrx-range {
-    display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px;
-    font-size: clamp(15px, 1.7vw, 19px);
-    color: var(--blush);
-  }
-  .wrx-pct {
-    font-family: "Fraunces", Georgia, serif;
-    font-weight: 700;
-    font-size: clamp(32px, 4.6vw, 56px);
-    color: var(--cream);
-    line-height: 1;
-  }
-  .wrx-pct.big {
-    color: var(--gold);
-    text-shadow: 0 2px 18px rgba(226,181,85,.45);
-    animation: glow 2.4s ease-in-out infinite;
-  }
-  @keyframes glow { 50% { text-shadow: 0 2px 30px rgba(226,181,85,.85); } }
-  .wrx-arrow { font-size: clamp(22px, 3vw, 34px); color: var(--gold); }
-
-  .wrx-sub { margin-top: 10px; font-size: 14px; color: rgba(251,247,239,.85); max-width: 560px; }
-
-  .wrx-side { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 12px; }
-
-  .wrx-countdown { display: flex; gap: 8px; }
-  .wrx-unit {
-    min-width: 58px; text-align: center;
-    background: rgba(251,247,239,.12);
-    border: 1px solid rgba(251,247,239,.25);
-    border-radius: 12px; padding: 8px 6px;
-    backdrop-filter: blur(4px);
-  }
-  .wrx-unit b { display: block; font-family: "Fraunces", Georgia, serif; font-size: 24px; }
-  .wrx-unit span { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; opacity: .8; }
-
+  .wrx-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 6px; }
   .wrx-cta {
-    display: inline-block; text-decoration: none;
-    font-weight: 700; font-size: 15px; letter-spacing: .02em;
-    color: var(--sage-900); background: var(--cream);
-    padding: 14px 28px; border-radius: 999px;
-    box-shadow: 0 6px 20px rgba(0,0,0,.18);
+    display: inline-flex; align-items: center; gap: 8px;
+    text-decoration: none; font-weight: 800; font-size: 15px;
+    color: var(--white); background: var(--ink);
+    padding: 14px 26px; border-radius: 999px;
     transition: transform .2s ease, background .2s ease;
   }
-  .wrx-cta:hover { transform: translateY(-2px); background: var(--gold); }
-  .wrx-fine { font-size: 11px; opacity: .7; text-align: center; }
+  .wrx-cta:hover { background: var(--green); transform: translateY(-2px); }
+  .wrx-count { font-size: 13px; font-weight: 600; color: var(--green-deep); }
+  .wrx-count b { font-weight: 900; }
 
-  @media (max-width: 720px) {
-    .wrx-banner { grid-template-columns: minmax(0, 1fr); text-align: center; padding: 24px 16px; }
-    .wrx-eyebrow { font-size: 10px; letter-spacing: .12em; }
-    .wrx-unit { min-width: 52px; }
-    .wrx-range { justify-content: center; }
-    .wrx-sub { margin-left: auto; margin-right: auto; }
-    .wrx-float.l3 { display: none; }
+  /* ---- green sale panel ---- */
+  .wrx-panel {
+    position: relative;
+    background:
+      radial-gradient(circle at 80% 15%, rgba(255,255,255,.18), transparent 40%),
+      linear-gradient(135deg, var(--green-leaf) 0%, var(--green) 45%, var(--green-deep) 100%);
+    color: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    padding: 26px 16px;
+    clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .wrx-offer { text-align: center; position: relative; z-index: 1; padding-left: 8%; }
+  .wrx-save { font-size: 13px; font-weight: 800; letter-spacing: .28em; text-transform: uppercase; opacity: .9; }
+  .wrx-range { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 6px 0 4px; }
+  .wrx-from { font-weight: 900; font-size: clamp(30px, 3.6vw, 46px); }
+  .wrx-to { font-size: clamp(24px, 2.6vw, 34px); font-weight: 800; }
+
+  .wrx-badge {
+    width: clamp(118px, 12vw, 150px); aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--green);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    box-shadow: 0 0 0 6px rgba(255,255,255,.25), 0 12px 28px rgba(0,0,0,.25);
+    animation: pop 2.6s ease-in-out infinite;
+  }
+  .wrx-badge small { font-size: 11px; font-weight: 800; letter-spacing: .2em; color: var(--ink); }
+  .wrx-badge strong { font-size: clamp(38px, 4.4vw, 54px); font-weight: 900; line-height: .95; }
+  .wrx-badge em { font-style: normal; font-size: 15px; font-weight: 900; letter-spacing: .14em; color: var(--ink); }
+  @keyframes pop { 0%, 100% { transform: scale(1) rotate(-6deg); } 50% { transform: scale(1.07) rotate(-2deg); } }
+
+  .wrx-fine { margin-top: 10px; font-size: 11px; font-weight: 500; opacity: .85; }
+
+  /* cross watermark on the panel */
+  .wrx-cross { position: absolute; right: 6%; bottom: -30px; width: 150px; opacity: .1; }
+
+  @media (max-width: 760px) {
+    .wrx-body { grid-template-columns: minmax(0, 1fr); }
+    .wrx-panel { clip-path: none; order: -1; padding: 22px 16px 26px; }
+    .wrx-offer { padding-left: 0; }
+    .wrx-copy { text-align: center; align-items: center; padding: 22px 16px 34px; }
+    .wrx-label::before { display: none; }
+    .wrx-actions { justify-content: center; }
+    .leaf.c, .leaf.b { display: none; }
+    .leaf.a { width: 64px; left: -14px; bottom: -14px; }
   }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -133,54 +146,64 @@
 </style>
 </head>
 <body>
-  <section class="wrx-banner" aria-label="Year-end markdown sale">
-    <!-- decorative leaves -->
-    <svg class="wrx-float l1" viewBox="0 0 64 64" aria-hidden="true"><path fill="#fbf7ef" d="M8 56C8 26 28 8 58 6c-2 30-20 50-50 50zm6-6c12-14 24-24 38-36-16 8-28 20-38 36z"/></svg>
-    <svg class="wrx-float l2" viewBox="0 0 64 64" aria-hidden="true"><path fill="#e2b555" d="M8 56C8 26 28 8 58 6c-2 30-20 50-50 50zm6-6c12-14 24-24 38-36-16 8-28 20-38 36z"/></svg>
-    <svg class="wrx-float l3" viewBox="0 0 64 64" aria-hidden="true"><path fill="#f3d9c8" d="M8 56C8 26 28 8 58 6c-2 30-20 50-50 50zm6-6c12-14 24-24 38-36-16 8-28 20-38 36z"/></svg>
-    <i class="wrx-spark s1"></i><i class="wrx-spark s2"></i><i class="wrx-spark s3"></i>
+<section class="wrx" aria-label="WellnessRX year-end markdown sale">
+  <div class="wrx-ticker" aria-hidden="true">
+    <div class="wrx-ticker-track">
+      <span>Year-End Markdown Sale</span><span>15% – 75% Off</span><span>Pharmacist-Curated Supplements</span><span>Free Shipping Bradford &amp; Simcoe $75+</span><span>Shop Online or In-Store</span>
+      <span>Year-End Markdown Sale</span><span>15% – 75% Off</span><span>Pharmacist-Curated Supplements</span><span>Free Shipping Bradford &amp; Simcoe $75+</span><span>Shop Online or In-Store</span>
+    </div>
+  </div>
+
+  <div class="wrx-body">
+    <!-- leafy corners -->
+    <svg class="leaf a" viewBox="0 0 100 100" aria-hidden="true"><path fill="#4caf50" d="M6 94C10 50 40 18 92 8 86 58 56 88 6 94z"/><path fill="none" stroke="#fff" stroke-width="2" d="M10 90C36 62 58 40 86 14"/></svg>
+    <svg class="leaf b" viewBox="0 0 100 100" aria-hidden="true"><path fill="#30802f" d="M6 94C10 50 40 18 92 8 86 58 56 88 6 94z"/></svg>
 
     <div class="wrx-copy">
-      <span class="wrx-eyebrow"><span class="dot"></span>End of the Year Markdown Sale</span>
-      <h2 class="wrx-title">Wrap up 2026 <em>well.</em></h2>
-      <div class="wrx-range">
-        <span>Save</span>
-        <span class="wrx-pct">15%</span>
-        <span class="wrx-arrow">&rarr;</span>
-        <span class="wrx-pct big">75% off</span>
+      <p class="wrx-label">Holisticare · Limited Time</p>
+      <h2 class="wrx-title">Year-End<br><span>Markdown Sale</span></h2>
+      <p class="wrx-sub">Professional-grade supplements, teas &amp; natural wellness essentials from Bradford's pharmacist-led holistic health hub.</p>
+      <div class="wrx-actions">
+        <a class="wrx-cta" href="https://www.wellnessrxpharmacy.ca/shop" target="_top">Shop the Sale <span aria-hidden="true">→</span></a>
+        <p class="wrx-count" id="wrx-count">Ends <b>Dec 31</b></p>
       </div>
-      <p class="wrx-sub">Pharmacist-curated supplements, teas &amp; natural wellness essentials, marked down while supplies last.</p>
     </div>
 
-    <div class="wrx-side">
-      <div class="wrx-countdown" id="wrx-countdown" aria-label="Time left in sale">
-        <div class="wrx-unit"><b id="wrx-d">--</b><span>Days</span></div>
-        <div class="wrx-unit"><b id="wrx-h">--</b><span>Hrs</span></div>
-        <div class="wrx-unit"><b id="wrx-m">--</b><span>Min</span></div>
+    <div class="wrx-panel">
+      <svg class="leaf c" viewBox="0 0 100 100" aria-hidden="true"><path fill="#ffffff" opacity=".35" d="M6 94C10 50 40 18 92 8 86 58 56 88 6 94z"/></svg>
+      <div class="wrx-offer">
+        <p class="wrx-save">Save</p>
+        <div class="wrx-range">
+          <span class="wrx-from">15%</span>
+          <span class="wrx-to" aria-hidden="true">→</span>
+          <div class="wrx-badge" aria-label="75 percent off">
+            <small>UP TO</small>
+            <strong>75%</strong>
+            <em>OFF</em>
+          </div>
+        </div>
+        <p class="wrx-fine">Discounts vary by product · While quantities last</p>
       </div>
-      <a class="wrx-cta" href="https://www.wellnessrxpharmacy.ca/shop" target="_top">Shop the Sale &rarr;</a>
-      <p class="wrx-fine">Discounts vary by product · Online, while quantities last · Ends Dec 31</p>
     </div>
-  </section>
+  </div>
+</section>
 
 <script>
   (function () {
-    // Sale ends Dec 31, 2026 at 11:59 PM Toronto time (EST, UTC-5)
+    // Sale ends Dec 31, 2026, 11:59 PM Toronto time (EST, UTC-5)
     var end = new Date("2026-12-31T23:59:59-05:00").getTime();
-    var box = document.getElementById("wrx-countdown");
-    function pad(n) { return n < 10 ? "0" + n : "" + n; }
+    var el = document.getElementById("wrx-count");
     function tick() {
       var diff = end - Date.now();
-      if (diff <= 0) { box.style.display = "none"; return; }
+      if (diff <= 0) { el.style.display = "none"; return; }
       var d = Math.floor(diff / 86400000);
       var h = Math.floor(diff / 3600000) % 24;
-      var m = Math.floor(diff / 60000) % 60;
-      document.getElementById("wrx-d").textContent = d;
-      document.getElementById("wrx-h").textContent = pad(h);
-      document.getElementById("wrx-m").textContent = pad(m);
+      el.innerHTML = d > 0
+        ? "Ends Dec 31 · <b>" + d + " days " + h + " hrs</b> left"
+        : "<b>Last day!</b> Ends tonight";
     }
     tick();
-    setInterval(tick, 30000);
+    setInterval(tick, 60000);
   })();
 </script>
 </body>
