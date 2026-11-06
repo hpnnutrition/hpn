@@ -19,3 +19,9 @@ Rollback: originals are in `backup-2026-11-06/`.
 
 Undo: switch any embed off in Wix → Settings → Custom Code. Originals are in `backup-2026-11-06/`.
 Caveat: the layout rules target Wix element IDs (e.g. `#comp-m7rsjjf9`). If the header or homepage sections are rebuilt in the Editor, re-check the mobile view.
+
+## 2026-11-06 — Part 3: iPhone fix (live)
+`9620f360…` Mobile Layout Fixes → **v2** (`mobile-layout-v2.html`, v1 moved to backup/):
+- Moved from BODY_END to **HEAD**, so the compact header applies at first paint. Before, slow phone loads briefly showed the old stacked header with the logo still fading in.
+- **Scrolling:** the hours/sale bars only show near the top of the page. The header slides away while you scroll down and comes back when you scroll up. Before, the bars slid back down over the sticky header and covered the menu and logo.
+- Tested in WebKit (Safari's engine) with iPhone 13 emulation, plus Chromium.

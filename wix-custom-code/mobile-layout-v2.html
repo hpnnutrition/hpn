@@ -1,0 +1,90 @@
+<style id="wrx-mobile-layout">
+/* WellnessRX — Mobile layout fixes (phones only). Wix Custom Embed, HEAD (so it applies before first paint), all pages. v2.
+   The Classic Editor's mobile layout can't be edited by API, so these rules adjust it from Custom Code.
+   Turn this embed off in Settings → Custom Code to undo everything here instantly. */
+@media (max-width: 768px) {
+  /* ── Header: menu + logo on one row, search + cart on one row (was 4 stacked rows, ~274px tall) ── */
+  #comp-m7rsjjf9 { min-height: 66px !important; }
+  #comp-m7rsjjf9 div:has(> #MENU_AS_CONTAINER_TOGGLE) { grid-template-rows: 66px !important; height: 66px !important; }
+  #MENU_AS_CONTAINER_TOGGLE, #comp-mp4ae0xs, #comp-mrw934pv, #comp-m7rsjjg7 { left: 0 !important; top: 0 !important; }
+  #MENU_AS_CONTAINER_TOGGLE {
+    grid-area: 1 / 1 / 2 / 2 !important; justify-self: start !important; align-self: center !important;
+    width: 48px !important; height: 48px !important; margin: 0 0 0 8px !important; z-index: 2;
+  }
+  #comp-mp4ae0xs {
+    grid-area: 1 / 1 / 2 / 2 !important; justify-self: center !important; align-self: center !important;
+    width: 186px !important; height: 57px !important; margin: 0 !important;
+  }
+  #comp-mp4ae0xs img { width: 100% !important; height: 100% !important; object-fit: contain !important; }
+  #comp-m7rsjjg2 { min-height: 56px !important; }
+  #comp-m7rsjjg2 div:has(> #comp-mrw934pv) { grid-template-rows: 56px !important; height: 56px !important; }
+  #comp-mrw934pv {
+    grid-area: 1 / 1 / 2 / 2 !important; align-self: center !important; justify-self: start !important;
+    margin: 0 0 0 14px !important; width: calc(100% - 78px) !important;
+  }
+  #comp-mrw934pv > div, #comp-mrw934pv > div > div, #comp-mrw934q6,
+  #comp-mrw934q6 instant-search-input, #comp-mrw934q6 .snize-instant-search, #comp-mrw934q6 input { width: 100% !important; box-sizing: border-box; }
+  #comp-m7rsjjg7 {
+    grid-area: 1 / 1 / 2 / 2 !important; align-self: center !important; justify-self: end !important;
+    margin: 0 16px 0 0 !important;
+  }
+
+  /* ── Menu open: hide the hours/sale bars and the Call/Book bar so they don't sit on top of the menu ── */
+  body.siteScrollingBlockedIOSFix #wrx-utility-bar,
+  body.siteScrollingBlockedIOSFix #wrx-sale-banner,
+  body.siteScrollingBlockedIOSFix #wrx-mobile-bar,
+  body.siteScrollingBlockedIOSFix #wrx-top-btn { visibility: hidden !important; opacity: 0 !important; pointer-events: none !important; }
+
+  /* ── Scrolling: the hours/sale bars only show near the top of the page; the header slides away while
+        scrolling down and comes back on scroll up (before, the bars slid back over the header) ── */
+  #SITE_HEADER { transition: transform .25s ease; }
+  html.wrx-hdr-hide #SITE_HEADER { transform: translateY(-110%) !important; }
+  html.wrx-scrolled #wrx-utility-bar, html.wrx-scrolled #wrx-sale-banner { transform: translateY(calc(-100% - 140px)) !important; }
+
+  /* ── Year-End Draw block was clipped to a 108px strip: give it room for its content ── */
+  #comp-mvzm3lmv { height: 1700px !important; }
+  #comp-mvzm33m1 div:has(> #comp-mvzm3lmv) { grid-template-rows: auto !important; }
+
+  /* ── "Meet your care team" repeats the team cards + FAQ already in the main block below ── */
+  #comp-mvb6htxc { display: none !important; }
+}
+</style>
+<script>
+/* Sale bar: its links are tiny (~16px tall) on phones. Make the whole bar tappable:
+   a tap anywhere on it (except the close button) follows the link of the message showing. */
+(function(){
+  function wire(){
+    var bar = document.getElementById('wrx-sale-banner');
+    if (!bar || bar.__wrxTap) return;
+    bar.__wrxTap = 1;
+    bar.addEventListener('click', function(e){
+      if (!window.matchMedia('(max-width: 768px)').matches) return;
+      if (e.target.closest('.wrx-close') || e.target.closest('a')) return;
+      var link = bar.querySelector('.wrx-slide.visible a.wrx-link');
+      if (link) link.click();
+    });
+    bar.style.cursor = 'pointer';
+  }
+  wire(); document.addEventListener('DOMContentLoaded', wire); window.addEventListener('load', wire);
+  [500, 1500, 3000].forEach(function(t){ setTimeout(wire, t); });
+})();
+
+/* Scroll states for phones: wrx-scrolled = past the top; wrx-hdr-hide = scrolling down. */
+(function(){
+  var root = document.documentElement, lastY = window.pageYOffset || 0, ticking = false;
+  function phone(){ return window.matchMedia('(max-width: 768px)').matches; }
+  function menuOpen(){ return document.body && document.body.classList.contains('siteScrollingBlockedIOSFix'); }
+  function update(){
+    ticking = false;
+    var y = window.pageYOffset || 0, dy = y - lastY;
+    if (!phone() || menuOpen()) { lastY = y; return; }
+    if (y < 120) { root.classList.remove('wrx-scrolled', 'wrx-hdr-hide'); lastY = y; return; }
+    root.classList.add('wrx-scrolled');
+    if (Math.abs(dy) < 8) return;
+    if (dy > 0) root.classList.add('wrx-hdr-hide'); else root.classList.remove('wrx-hdr-hide');
+    lastY = y;
+  }
+  window.addEventListener('scroll', function(){ if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  window.addEventListener('resize', update);
+})();
+</script>
