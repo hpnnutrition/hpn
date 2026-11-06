@@ -40,3 +40,7 @@ If desktop Safari on a Mac also shows a blank logo, the same rule can be applied
     - `homepage-main-block-FIXED.html`: homepage, large main block
     - `site-footer-FIXED.html`: footer (every page)
     - `shipping-policy-page-FIXED.html`: /shipping-delivery-policy
+
+## 2026-11-06 — Part 6: logo built into the code (v5)
+Mobile Layout Fixes → **v5** (`mobile-layout-v5.html`). The logo still didn't show on the owner's iPhone, even from the PNG. The logo is now an optimized 372×114 PNG (5.7KB) built into the CSS as a data URI, so no image download is involved. Tested in WebKit with every copy of the logo file blocked: the logo still shows.
+Note: the live copy has one fewer line break than this file (two CSS rules on one line), which is harmless.

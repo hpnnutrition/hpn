@@ -1,0 +1,106 @@
+<style id="wrx-mobile-layout">
+/* WellnessRX — Mobile layout fixes (phones only). Wix Custom Embed, HEAD (so it applies before first paint), all pages. v5.
+   The Classic Editor's mobile layout can't be edited by API, so these rules adjust it from Custom Code.
+   Turn this embed off in Settings → Custom Code to undo everything here instantly. */
+/* All screen sizes: Wix puts a plain-square shape mask on the logo image; it changes nothing visually
+   but Safari can render masked images blank. Remove it. */
+#img_comp-mp4ae0xs { -webkit-mask-image: none !important; mask-image: none !important; }
+
+@media (max-width: 768px) {
+  /* ── Header: menu + logo on one row, search + cart on one row (was 4 stacked rows, ~274px tall) ── */
+  #comp-m7rsjjf9 { min-height: 66px !important; }
+  #comp-m7rsjjf9 div:has(> #MENU_AS_CONTAINER_TOGGLE) { grid-template-rows: 66px !important; height: 66px !important; }
+  #MENU_AS_CONTAINER_TOGGLE, #comp-mp4ae0xs, #comp-mrw934pv, #comp-m7rsjjg7 { left: 0 !important; top: 0 !important; }
+  #MENU_AS_CONTAINER_TOGGLE {
+    grid-area: 1 / 1 / 2 / 2 !important; justify-self: start !important; align-self: center !important;
+    width: 48px !important; height: 48px !important; margin: 0 0 0 8px !important; z-index: 2;
+  }
+  #comp-mp4ae0xs {
+    grid-area: 1 / 1 / 2 / 2 !important; justify-self: center !important; align-self: center !important;
+    width: 186px !important; height: 57px !important; margin: 0 !important;
+  }
+  #comp-mp4ae0xs img { width: 100% !important; height: 100% !important; object-fit: contain !important; opacity: 0 !important; }
+  /* Logo: drawn straight onto the header row from a copy of the logo built into this code (no download needed), so nothing Wix does to the
+     image (AVIF format, shape mask, fade-in) or the menu button's white box can hide it on iPhone Safari.
+     The original logo link stays on top (invisible) so tapping the logo still goes to the homepage. */
+  #comp-m7rsjjf9 { position: relative !important; }
+  #comp-m7rsjjf9::after {
+    content: ""; position: absolute; left: 50%; top: 50%; width: 186px; height: 57px;
+    transform: translate(-50%, -50%); pointer-events: none; z-index: 1;
+    background: url("data:image/png;base64,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") center / contain no-repeat;
+  }
+  #comp-mp4ae0xs { z-index: 3 !important; }
+  #comp-mp4ae0xs a { display: block !important; width: 100% !important; height: 100% !important; background: transparent !important; }
+  #MENU_AS_CONTAINER_TOGGLE, #MENU_AS_CONTAINER_TOGGLE > div { max-width: 48px !important; overflow: hidden !important; background: transparent !important; }
+  #comp-m7rsjjg2 { min-height: 56px !important; }
+  #comp-m7rsjjg2 div:has(> #comp-mrw934pv) { grid-template-rows: 56px !important; height: 56px !important; }
+  #comp-mrw934pv {
+    grid-area: 1 / 1 / 2 / 2 !important; align-self: center !important; justify-self: start !important;
+    margin: 0 0 0 14px !important; width: calc(100% - 78px) !important;
+  }
+  #comp-mrw934pv > div, #comp-mrw934pv > div > div, #comp-mrw934q6,
+  #comp-mrw934q6 instant-search-input, #comp-mrw934q6 .snize-instant-search, #comp-mrw934q6 input { width: 100% !important; box-sizing: border-box; }
+  #comp-m7rsjjg7 {
+    grid-area: 1 / 1 / 2 / 2 !important; align-self: center !important; justify-self: end !important;
+    margin: 0 16px 0 0 !important;
+  }
+
+  /* ── Menu open: hide the hours/sale bars and the Call/Book bar so they don't sit on top of the menu ── */
+  body.siteScrollingBlockedIOSFix #wrx-utility-bar,
+  body.siteScrollingBlockedIOSFix #wrx-sale-banner,
+  body.siteScrollingBlockedIOSFix #wrx-mobile-bar,
+  body.siteScrollingBlockedIOSFix #wrx-top-btn { visibility: hidden !important; opacity: 0 !important; pointer-events: none !important; }
+
+  /* ── Scrolling: the hours/sale bars only show near the top of the page; the header slides away while
+        scrolling down and comes back on scroll up (before, the bars slid back over the header) ── */
+  #SITE_HEADER { transition: transform .25s ease; }
+  html.wrx-hdr-hide #SITE_HEADER { transform: translateY(-110%) !important; }
+  html.wrx-scrolled #wrx-utility-bar, html.wrx-scrolled #wrx-sale-banner { transform: translateY(calc(-100% - 140px)) !important; }
+
+  /* ── Year-End Draw block was clipped to a 108px strip: give it room for its content ── */
+  #comp-mvzm3lmv { height: 1700px !important; }
+  #comp-mvzm33m1 div:has(> #comp-mvzm3lmv) { grid-template-rows: auto !important; }
+
+  /* ── "Meet your care team" repeats the team cards + FAQ already in the main block below ── */
+  #comp-mvb6htxc { display: none !important; }
+}
+</style>
+<script>
+/* Sale bar: its links are tiny (~16px tall) on phones. Make the whole bar tappable:
+   a tap anywhere on it (except the close button) follows the link of the message showing. */
+(function(){
+  function wire(){
+    var bar = document.getElementById('wrx-sale-banner');
+    if (!bar || bar.__wrxTap) return;
+    bar.__wrxTap = 1;
+    bar.addEventListener('click', function(e){
+      if (!window.matchMedia('(max-width: 768px)').matches) return;
+      if (e.target.closest('.wrx-close') || e.target.closest('a')) return;
+      var link = bar.querySelector('.wrx-slide.visible a.wrx-link');
+      if (link) link.click();
+    });
+    bar.style.cursor = 'pointer';
+  }
+  wire(); document.addEventListener('DOMContentLoaded', wire); window.addEventListener('load', wire);
+  [500, 1500, 3000].forEach(function(t){ setTimeout(wire, t); });
+})();
+
+/* Scroll states for phones: wrx-scrolled = past the top; wrx-hdr-hide = scrolling down. */
+(function(){
+  var root = document.documentElement, lastY = window.pageYOffset || 0, ticking = false;
+  function phone(){ return window.matchMedia('(max-width: 768px)').matches; }
+  function menuOpen(){ return document.body && document.body.classList.contains('siteScrollingBlockedIOSFix'); }
+  function update(){
+    ticking = false;
+    var y = window.pageYOffset || 0, dy = y - lastY;
+    if (!phone() || menuOpen()) { lastY = y; return; }
+    if (y < 120) { root.classList.remove('wrx-scrolled', 'wrx-hdr-hide'); lastY = y; return; }
+    root.classList.add('wrx-scrolled');
+    if (Math.abs(dy) < 8) return;
+    if (dy > 0) root.classList.add('wrx-hdr-hide'); else root.classList.remove('wrx-hdr-hide');
+    lastY = y;
+  }
+  window.addEventListener('scroll', function(){ if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  window.addEventListener('resize', update);
+})();
+</script>
