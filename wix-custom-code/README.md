@@ -44,3 +44,8 @@ If desktop Safari on a Mac also shows a blank logo, the same rule can be applied
 ## 2026-11-06 — Part 6: logo built into the code (v5)
 Mobile Layout Fixes → **v5** (`mobile-layout-v5.html`). The logo still didn't show on the owner's iPhone, even from the PNG. The logo is now an optimized 372×114 PNG (5.7KB) built into the CSS as a data URI, so no image download is involved. Tested in WebKit with every copy of the logo file blocked: the logo still shows.
 Note: the live copy has one fewer line break than this file (two CSS rules on one line), which is harmless.
+
+## 2026-11-06 — Part 7: Ontario-wide shipping (checkout)
+- Added the **Basic Shipping** carrier to the Ontario region (backup rate off).
+- New shipping option `790a0b44…`: **"GTA & Ontario Shipping - Free Over $99"**, C$14.99, free at C$99+, 2-5 business days. It covers all of Ontario.
+- Not doable by API: renaming or turning off the old Local-delivery row "GTA Delivery" (C$14.99, free at $99+). It now overlaps the new option for GTA addresses. Do it in the dashboard.
