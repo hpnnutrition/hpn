@@ -49,3 +49,7 @@ Note: the live copy has one fewer line break than this file (two CSS rules on on
 - Added the **Basic Shipping** carrier to the Ontario region (backup rate off).
 - New shipping option `790a0b44…`: **"GTA & Ontario Shipping - Free Over $99"**, C$14.99, free at C$99+, 2-5 business days. It covers all of Ontario.
 - Not doable by API: renaming or turning off the old Local-delivery row "GTA Delivery" (C$14.99, free at $99+). It now overlaps the new option for GTA addresses. Do it in the dashboard.
+
+## 2026-11-06 — Part 8: footer shipping text (live)
+New embed `654607fa…` **Footer Shipping Text Fix** (`footer-shipping-fix-v1.html`, BODY_END, all pages). It fetches the footer's own Embed HTML file (filesusr allows CORS), corrects the two shipping lines (GTA & Ontario $99+, Canada-wide $129+), and points the footer frame at that corrected copy. Wix blocks `srcdoc`, so it uses a blob URL instead.
+It only acts on the current footer file `1129db_0046633500c32f177987d1c0dfbb80a4`. Once the footer is edited in the Wix Editor, the file name changes and the script does nothing. Delete the embed then.

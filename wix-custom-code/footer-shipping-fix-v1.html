@@ -1,0 +1,44 @@
+<script>
+/* WellnessRX — Footer shipping text fix (all pages, BODY_END).
+   The footer is a Wix "Embed HTML" block, which can only be edited in the Wix Editor. Until it is, this loads
+   the footer's own code, corrects the shipping lines ($99 GTA → GTA & Ontario, $179 → $129 Canada-wide) and shows that.
+   It only touches the current footer file (1129db_00466…). If the footer is edited in Wix, the file name changes
+   and this script does nothing, so the Editor version wins. Safe to delete after the footer is updated in the Editor. */
+(function(){
+  var OLD_FILE = '1129db_0046633500c32f177987d1c0dfbb80a4';
+  var FIXES = [
+    ['<b>Free GTA shipping</b> on $99+', '<b>Free GTA &amp; Ontario shipping</b> on $99+'],
+    ['<b>Free Canada-wide shipping</b> on $179+', '<b>Free Canada-wide shipping</b> on $129+']
+  ];
+  var fixedHtml = null, loading = false;
+  function frames(){ return Array.prototype.slice.call(document.querySelectorAll('iframe[src*="' + OLD_FILE + '"]')); }
+  function show(){
+    // Wix blocks `srcdoc` on its frames, so point the frame at an in-memory copy (blob URL) instead.
+    if (!show.url) show.url = URL.createObjectURL(new Blob([fixedHtml], { type: 'text/html' }));
+    frames().forEach(function(f){ if (!f.__wrxFooterFixed) { f.__wrxFooterFixed = 1; f.src = show.url; } });
+  }
+  function apply(){
+    var list = frames();
+    if (!list.length) return;
+    if (fixedHtml) { show(); return; }
+    if (loading) return;
+    loading = true;
+    fetch(list[0].src).then(function(r){ return r.ok ? r.text() : ''; }).then(function(html){
+      if (!html) return;
+      for (var i = 0; i < FIXES.length; i++) {
+        if (html.indexOf(FIXES[i][0]) < 0) return;   // footer changed: leave it alone
+        html = html.split(FIXES[i][0]).join(FIXES[i][1]);
+      }
+      fixedHtml = html;
+      show();
+    }).catch(function(){}).then(function(){ loading = false; });
+  }
+  function start(){
+    apply();
+    if (window.MutationObserver) {
+      new MutationObserver(apply).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['src'] });
+    }
+  }
+  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start);
+})();
+</script>
