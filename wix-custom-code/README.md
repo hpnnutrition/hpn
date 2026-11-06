@@ -9,3 +9,13 @@ Live code lives in Wix: Settings → Custom Code (Custom Embeds API). This folde
 | `0e859f3f…` Email Capture Popup | Phone CSS only (`email-popup-mobile-css-v3.txt`): fits on screen (it was taller than the screen and the × was cut off), 40px close button, 16px email field (stops iPhone zoom), bigger "No thanks". |
 
 Rollback: originals are in `backup-2026-11-06/`.
+
+## 2026-11-06 — Part 2 (live)
+| Embed | Change |
+|---|---|
+| `0e859f3f…` Email Capture Popup → submit v3 (`email-popup-submit-v3.js`) | **Signups now go to the real Mailchimp audience** (`c405e59399`, us9) via Mailchimp's public signup endpoint. Before, emails were only saved in the visitor's own browser and posted to a non-existent endpoint. Shows Mailchimp's error text for bad emails. No longer pushes the email address into the analytics dataLayer. |
+| `d5b46de7…` Mailchimp | Added one CSS line that hides Mailchimp's own "Sitewide Email Capture" popup, which opened 2 seconds after landing and ran off the edges of phone screens. Mailchimp tracking still loads. Better long-term fix: pause that form in Mailchimp (Website → Forms). |
+| `9620f360…` **NEW** Mobile Layout Fixes (`mobile-layout-v1.html`) | Phones only. Header: menu and logo on one row, search and cart on one row (274px → 122px). Year-End Draw block was clipped to a 108px strip and is now shown in full. "Meet your care team" block hidden on phones because the main block repeats its team cards and FAQ. Hours/sale bars and the Call/Book bar hide while the menu is open. The whole sale bar is tappable. Homepage on phones: 22,600px → 20,400px. |
+
+Undo: switch any embed off in Wix → Settings → Custom Code. Originals are in `backup-2026-11-06/`.
+Caveat: the layout rules target Wix element IDs (e.g. `#comp-m7rsjjf9`). If the header or homepage sections are rebuilt in the Editor, re-check the mobile view.
