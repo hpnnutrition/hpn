@@ -25,3 +25,7 @@ Caveat: the layout rules target Wix element IDs (e.g. `#comp-m7rsjjf9`). If the 
 - Moved from BODY_END to **HEAD**, so the compact header applies at first paint. Before, slow phone loads briefly showed the old stacked header with the logo still fading in.
 - **Scrolling:** the hours/sale bars only show near the top of the page. The header slides away while you scroll down and comes back when you scroll up. Before, the bars slid back down over the sticky header and covered the menu and logo.
 - Tested in WebKit (Safari's engine) with iPhone 13 emulation, plus Chromium.
+
+## 2026-11-06 — Part 4: logo on iPhone (live)
+Mobile Layout Fixes → **v3** (`mobile-layout-v3.html`). The header logo was blank on the owner's iPhone, even before the header change. Wix serves the logo as AVIF, which some Safari versions draw blank. On phones the logo is now drawn from the PNG version of the same file. The original image stays in place, invisible, for its alt text and homepage link.
+If desktop Safari on a Mac also shows a blank logo, the same rule can be applied outside the phone media query.
