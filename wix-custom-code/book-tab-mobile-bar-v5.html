@@ -1,0 +1,120 @@
+<!-- WellnessRX — Book Tab + Scroll Top v5 (mobile action bar)
+     Wix Custom Embed 699f3751-a218-470a-8b74-26b520c75944, BODY_START, all pages.
+     Desktop: green BOOK side tab + one scroll-to-top button (as before).
+     Phones (<=768px): the side tab, Wix's empty Quick Action Bar circle and the duplicate
+     back-to-top button are removed. Replaced with one thumb-friendly bottom bar: Call + Book. -->
+<style>
+  #BACK_TO_TOP_BUTTON { display: none !important; } /* duplicate of #wrx-top-btn */
+  #wrx-mobile-bar { display: none; }
+  @media (max-width: 768px) {
+    #wrx-book-tab, #QUICK_ACTION_BAR { display: none !important; }
+    #wrx-mobile-bar {
+      display: flex; gap: 8px;
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 99995;
+      padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+      background: rgba(255,255,255,.97);
+      border-top: 1px solid #dfe9dc;
+      box-shadow: 0 -4px 14px rgba(0,0,0,.08);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      transition: transform .25s ease;
+    }
+    #wrx-mobile-bar.wrx-mb-hide { transform: translateY(110%); }
+    #wrx-mobile-bar a {
+      flex: 1; min-height: 46px;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      border-radius: 999px; text-decoration: none;
+      font-size: 15px; font-weight: 700; letter-spacing: .01em;
+      -webkit-tap-highlight-color: transparent;
+    }
+    #wrx-mobile-bar .wrx-mb-call { color: #2d5f3f; background: #fff; border: 1.5px solid #348433; }
+    #wrx-mobile-bar .wrx-mb-book { color: #fff; background: #348433; border: 1.5px solid #348433; flex: 1.35; }
+    html body { padding-bottom: calc(62px + env(safe-area-inset-bottom)) !important; }
+    #wrx-top-btn { right: 12px !important; bottom: calc(74px + env(safe-area-inset-bottom)) !important; width: 44px !important; height: 44px !important; }
+    #wrx-ship-bar { bottom: calc(62px + env(safe-area-inset-bottom)) !important; }
+  }
+</style>
+<script>
+(function(){
+  var BOOK_URL = 'https://www.wellnessrxpharmacy.ca/book-appointment-bradford';
+  var BOOK_ID = 'wrx-book-tab', TOP_ID = 'wrx-top-btn', BAR_ID = 'wrx-mobile-bar';
+  var CAL = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>';
+  var PHONE = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>';
+  // No bottom bar where it would get in the way of booking or paying
+  var NO_BAR = /book-appointment|book-online|booking|service-page|cart|checkout|thank-you|payment/i;
+
+  function build(){
+    if (!document.body) return;
+    // ── BOOK SIDE TAB (desktop; hidden on phones by CSS) ──
+    if(!document.getElementById(BOOK_ID)){
+      var tab = document.createElement('a');
+      tab.id = BOOK_ID;
+      tab.href = BOOK_URL;
+      tab.setAttribute('aria-label', 'Book an appointment');
+      tab.innerHTML = CAL.replace('stroke="currentColor"', 'stroke="#fff"') +
+        '<span style="writing-mode:vertical-lr;transform:rotate(180deg);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;margin-top:5px">BOOK</span>';
+      tab.setAttribute('style',[
+        'position:fixed','right:0','top:50%','transform:translateY(-50%)','z-index:99999',
+        'display:flex','flex-direction:column','align-items:center','justify-content:center',
+        'gap:6px','background:#348433','padding:18px 10px','border-radius:12px 0 0 12px',
+        'box-shadow:-3px 0 16px rgba(52,132,51,.5)','text-decoration:none',
+        '-webkit-tap-highlight-color:transparent','cursor:pointer'
+      ].join(';'));
+      document.body.appendChild(tab);
+    }
+    // ── SCROLL TO TOP (one button only) ──
+    if(!document.getElementById(TOP_ID)){
+      var btn = document.createElement('button');
+      btn.id = TOP_ID;
+      btn.type = 'button';
+      btn.setAttribute('aria-label', 'Back to top');
+      btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>';
+      btn.setAttribute('style',[
+        'position:fixed','bottom:90px','right:16px','z-index:99999','width:46px','height:46px',
+        'border-radius:50%','background:#348433','border:none','cursor:pointer',
+        'display:flex','align-items:center','justify-content:center',
+        'box-shadow:0 4px 16px rgba(52,132,51,.45)','opacity:0','transition:opacity .3s',
+        'pointer-events:none','-webkit-tap-highlight-color:transparent'
+      ].join(';'));
+      btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+      window.addEventListener('scroll', function(){
+        var show = window.scrollY > 600;
+        btn.style.opacity = show ? '1' : '0';
+        btn.style.pointerEvents = show ? 'auto' : 'none';
+      }, {passive:true});
+      document.body.appendChild(btn);
+    }
+    // ── MOBILE ACTION BAR: Call + Book (phones only, via CSS) ──
+    var bar = document.getElementById(BAR_ID);
+    var skip = NO_BAR.test(location.pathname);
+    if (!bar && !skip) {
+      bar = document.createElement('nav');
+      bar.id = BAR_ID;
+      bar.setAttribute('aria-label', 'Quick actions');
+      bar.innerHTML =
+        '<a class="wrx-mb-call" href="tel:+19057757874">' + PHONE + '<span>Call</span></a>' +
+        '<a class="wrx-mb-book" href="' + BOOK_URL + '">' + CAL + '<span>Book a visit</span></a>';
+      document.body.appendChild(bar);
+    }
+    if (bar) bar.style.display = skip ? 'none' : '';
+  }
+
+  // Tuck the bar away while a text field is focused (on-screen keyboard)
+  document.addEventListener('focusin', function(e){
+    var b = document.getElementById(BAR_ID);
+    if (b && e.target && /INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) b.classList.add('wrx-mb-hide');
+  });
+  document.addEventListener('focusout', function(){
+    var b = document.getElementById(BAR_ID); if (b) b.classList.remove('wrx-mb-hide');
+  });
+
+  if (document.body) build();
+  document.addEventListener('DOMContentLoaded', build);
+  window.addEventListener('load', build);
+  [400, 900, 1800, 3500].forEach(function(t){ setTimeout(build, t); });
+  window.addEventListener('hashchange', build);
+  window.addEventListener('popstate', build);
+  // Wix navigates between pages without a reload: re-check the page type when the URL changes
+  var lastPath = location.pathname;
+  setInterval(function(){ if (location.pathname !== lastPath) { lastPath = location.pathname; build(); } }, 800);
+})();
+</script>

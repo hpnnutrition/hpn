@@ -1,0 +1,9 @@
+Wix Custom Embed 0e859f3f-9d23-42fd-8a6c-d6886dc31629 "WellnessRx — Email Capture Popup (Welcome Offer)" (revision 2).
+Only this mobile media-query block was changed; the rest of the embed is untouched. Original block:
+
+  @media (max-width: 540px) {
+    #wrx-email-modal { grid-template-columns: 1fr; }
+    .wrx-email-visual { padding: 24px 20px; text-align: center; }
+    .wrx-email-visual h3 { font-size: 22px; }
+    .wrx-email-form-side { padding: 24px 22px 24px; }
+  }

@@ -1,0 +1,80 @@
+<!-- Wix Custom Embed 699f3751-a218-470a-8b74-26b520c75944 "WellnessRX — Book Tab + Scroll Top v4" (revision 1), BODY_START. Backup before mobile fix. -->
+<script>
+(function(){
+  var BOOK_ID = 'wrx-book-tab';
+  var TOP_ID  = 'wrx-top-btn';
+
+  function build(){
+    // ── BOOK SIDE TAB ──────────────────────────────────────────
+    if(!document.getElementById(BOOK_ID)){
+      var tab = document.createElement('a');
+      tab.id = BOOK_ID;
+      tab.href = 'https://www.wellnessrxpharmacy.ca/book-online';
+      tab.target = '_blank';
+      tab.rel = 'noopener noreferrer';
+      tab.innerHTML =
+        '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>' +
+        '<span style="writing-mode:vertical-lr;transform:rotate(180deg);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;margin-top:5px">BOOK</span>';
+      tab.setAttribute('style',[
+        'position:fixed','right:0','top:50%',
+        'transform:translateY(-50%)',
+        'z-index:99999',
+        'display:-webkit-flex','display:flex',
+        '-webkit-flex-direction:column','flex-direction:column',
+        '-webkit-align-items:center','align-items:center',
+        '-webkit-justify-content:center','justify-content:center',
+        'gap:6px','background:#348433',
+        'padding:18px 10px',
+        'border-radius:12px 0 0 12px',
+        'box-shadow:-3px 0 16px rgba(52,132,51,.5)',
+        'text-decoration:none',
+        '-webkit-tap-highlight-color:transparent',
+        'cursor:pointer'
+      ].join(';'));
+      document.body.appendChild(tab);
+    }
+
+    // ── SCROLL TO TOP ──────────────────────────────────────────
+    if(!document.getElementById(TOP_ID)){
+      var btn = document.createElement('button');
+      btn.id = TOP_ID;
+      btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>';
+      btn.setAttribute('style',[
+        'position:fixed','bottom:90px','right:16px',
+        'z-index:99999',
+        'width:46px','height:46px',
+        'border-radius:50%',
+        'background:#348433','border:none',
+        'cursor:pointer',
+        'display:-webkit-flex','display:flex',
+        '-webkit-align-items:center','align-items:center',
+        '-webkit-justify-content:center','justify-content:center',
+        'box-shadow:0 4px 16px rgba(52,132,51,.5)',
+        'opacity:0',
+        '-webkit-transition:opacity .3s','transition:opacity .3s',
+        'pointer-events:none',
+        '-webkit-tap-highlight-color:transparent'
+      ].join(';'));
+      btn.addEventListener('click', function(){
+        window.scrollTo({top:0, behavior:'smooth'});
+      });
+      window.addEventListener('scroll', function(){
+        var show = window.scrollY > 250;
+        btn.style.opacity = show ? '1' : '0';
+        btn.style.pointerEvents = show ? 'auto' : 'none';
+      }, {passive:true});
+      document.body.appendChild(btn);
+    }
+  }
+
+  // Run on every possible lifecycle event
+  if(document.body){ build(); }
+  document.addEventListener('DOMContentLoaded', build);
+  window.addEventListener('load', build);
+  [400, 900, 1800, 3500].forEach(function(t){ setTimeout(build, t); });
+
+  // Watch for Wix SPA route changes
+  window.addEventListener('hashchange', build);
+  window.addEventListener('popstate', build);
+})();
+</script>
