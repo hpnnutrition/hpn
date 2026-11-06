@@ -1,0 +1,39 @@
+Wix Custom Embed 0e859f3f-9d23-42fd-8a6c-d6886dc31629 (revision 3 → 4). Old submit handler, replaced by email-popup-submit-v3.js.
+It never sent emails anywhere real: it saved them in the visitor's own browser and posted to a non-existent Wix endpoint.
+
+    // Fire tracking events
+    if (window.gtag) window.gtag('event', 'newsletter_signup', { method: 'popup' });
+    if (window.fbq) window.fbq('track', 'Lead', { content_name: 'newsletter_signup' });
+    if (window.dataLayer) window.dataLayer.push({ event: 'newsletter_signup', email: email });
+
+    // Store the email locally so user sees confirmation immediately.
+    // The actual subscriber list is captured in two ways:
+    //   1. Stored in browser localStorage (for owner manual export, see admin instructions)
+    //   2. Available via Wix's contact form integration (recommended next step)
+    try {
+      var list = JSON.parse(localStorage.getItem('wrxEmailSubscribers') || '[]');
+      list.push({ email: email, ts: Date.now(), page: location.pathname });
+      localStorage.setItem('wrxEmailSubscribers', JSON.stringify(list));
+    } catch(e) {}
+
+    // Submit to Wix contacts via Wix's public form API (if available on site)
+    // This pushes the lead into Wix CRM automatically
+    try {
+      fetch('/_api/wix-marketing-tags-server/v1/site-collect', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email, source: 'newsletter_popup' })
+      }).catch(function(){}); // silent fail; user still sees success
+    } catch(e) {}
+
+    setStatus({ subscribed: true, email: email });
+
+    // Show success state
+    setTimeout(function(){
+      modal.querySelector('.wrx-email-visual').style.display = 'none';
+      modal.querySelector('.wrx-email-form-side').style.display = 'none';
+      success.classList.add('show');
+    }, 400);
+  });
+})();
+</script>
