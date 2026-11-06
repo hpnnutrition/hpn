@@ -29,3 +29,14 @@ Caveat: the layout rules target Wix element IDs (e.g. `#comp-m7rsjjf9`). If the 
 ## 2026-11-06 — Part 4: logo on iPhone (live)
 Mobile Layout Fixes → **v3** (`mobile-layout-v3.html`). The header logo was blank on the owner's iPhone, even before the header change. Wix serves the logo as AVIF, which some Safari versions draw blank. On phones the logo is now drawn from the PNG version of the same file. The original image stays in place, invisible, for its alt text and homepage link.
 If desktop Safari on a Mac also shows a blank logo, the same rule can be applied outside the phone media query.
+
+## 2026-11-06 — Part 5: logo v4 + shipping tiers
+- Mobile Layout Fixes → **v4** (`mobile-layout-v4.html`). The logo is drawn straight onto the header row from the PNG file, so it shows even if Wix's own logo image never draws. Also removed the no-op square SVG mask Wix puts on the logo image (all screen sizes), because Safari can render masked images blank.
+- **Shipping tiers:** Bradford local **$75+** · GTA & rest of Ontario **$99+** · Canada-wide **$129+**.
+  - Custom code updated to say "GTA & Ontario": SEO FAQ schema (rev 4), Sale banner (rev 25), Ship progress bar (rev 12), Exit popup (rev 10, still disabled). These already said $129.
+  - **Checkout (Wix shipping settings), read only:** Ontario has Local delivery 10 km at $5, free at $75+ ✅, and "GTA Delivery" at $14.99, free at $99+ ✅. Rest of Canada is $24.99, free at $129+ ✅. Not checked: whether "GTA Delivery" covers all of Ontario (the API doesn't show its area).
+  - **Editor-only HTML embeds still saying $179** (the API can't edit these). Corrected copies are in `editor-html-embeds/*-FIXED.html`, originals beside them:
+    - `homepage-top-banner-FIXED.html`: homepage, flu/COVID + sale banner block
+    - `homepage-main-block-FIXED.html`: homepage, large main block
+    - `site-footer-FIXED.html`: footer (every page)
+    - `shipping-policy-page-FIXED.html`: /shipping-delivery-policy

@@ -1,0 +1,260 @@
+<!-- WellnessRX Pharmacy · Rotating promotions (Flu shot + COVID vaccine walk-ins + Cold & Flu 15% off + Year-End Sale 15–75% off + Nutrition consultation / Supplement review + Meal plans) · Wix Embed HTML -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  .wrx-promo{--g:#348433;--gd:#2A6040;--ink:#14231a;--muted:#4b5a50;--bg:#F5F7F0;--tint:#EDF0E8;--line:#dfe5d8;
+    background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+    padding:48px 24px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrx-promo *{box-sizing:border-box}
+  .wrx-promo .wrap{max-width:1120px;margin:0 auto;position:relative}
+  .wrx-promo .viewport{overflow:hidden;border-radius:8px;border:1px solid var(--line);background:#fff;box-shadow:0 18px 40px -28px rgba(20,35,26,.45)}
+  .wrx-promo .track{display:flex;transition:transform .6s cubic-bezier(.4,0,.2,1)}
+  .wrx-promo .slide{flex:0 0 100%;display:grid;grid-template-columns:1.25fr 1fr;min-height:340px}
+  .wrx-promo .copy{padding:44px 44px 40px;display:flex;flex-direction:column;justify-content:center}
+  .wrx-promo .copy .eyebrow{font-family:"DM Mono",ui-monospace,monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--g);margin:0 0 12px}
+  .wrx-promo h2{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:clamp(28px,3.6vw,42px);line-height:1.08;letter-spacing:-.01em;margin:0 0 14px;max-width:18ch}
+  .wrx-promo h2 span{color:var(--g)}
+  .wrx-promo .copy p{font-size:16px;color:var(--muted);margin:0 0 22px;max-width:52ch}
+  .wrx-promo .cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .wrx-promo .btn{display:inline-flex;align-items:center;min-height:44px;padding:12px 22px;border-radius:3px;font-size:14px;font-weight:600;text-decoration:none}
+  .wrx-promo .btn.primary{background:var(--gd);color:#fff}
+  .wrx-promo .btn.primary:hover,.wrx-promo .btn.primary:focus-visible{background:var(--g)}
+  .wrx-promo .btn.ghost{border:1px solid #c9d1c3;color:var(--ink);background:#fff}
+  .wrx-promo .btn.ghost:hover{border-color:var(--g)}
+  .wrx-promo .copy .code{display:inline-block;align-self:flex-start;font-size:14px;color:var(--gd);background:var(--tint);border:1px dashed var(--g);border-radius:4px;padding:8px 14px;margin:-6px 0 20px}
+  .wrx-promo .copy .code strong{font-family:"DM Mono",ui-monospace,monospace;letter-spacing:.08em;color:var(--ink)}
+  .wrx-promo .copy .fine{font-size:12px;color:var(--muted);margin:16px 0 0}
+  .wrx-promo .offer{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:36px 24px;background:var(--tint);overflow:hidden}
+  .wrx-promo .offer::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;border:1px solid rgba(52,132,51,.18);right:-140px;top:-120px}
+  .wrx-promo .offer::after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:rgba(52,132,51,.07);left:-80px;bottom:-110px}
+  .wrx-promo .slide.dark .offer{background:var(--gd);color:#fff}
+  .wrx-promo .slide.dark .offer::before{border-color:rgba(255,255,255,.18)}
+  .wrx-promo .slide.dark .offer::after{background:rgba(255,255,255,.06)}
+  .wrx-promo .pre{position:relative;font-family:"DM Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin:0 0 4px}
+  .wrx-promo .big{position:relative;font-family:Fraunces,Georgia,serif;font-weight:700;font-size:clamp(64px,9vw,112px);line-height:1;letter-spacing:-.02em;color:var(--g);margin:0}
+  .wrx-promo .slide.dark .big{color:#fff}
+  .wrx-promo .big.word{font-size:clamp(52px,6.4vw,84px)}
+  .wrx-promo .big small{font-size:.42em;white-space:nowrap;vertical-align:.9em;margin-left:2px}
+  .wrx-promo .big .to{font-size:.32em;font-weight:600;vertical-align:.95em;margin:0 6px;opacity:.85}
+  .wrx-promo .post{position:relative;font-family:Fraunces,Georgia,serif;font-size:22px;font-weight:600;margin:4px 0 14px}
+  .wrx-promo .chip{position:relative;display:inline-block;font-size:12px;font-weight:600;letter-spacing:.02em;background:#fff;color:var(--gd);border-radius:999px;padding:6px 14px}
+  .wrx-promo .slide.dark .chip{background:rgba(255,255,255,.14);color:#fff}
+  .wrx-promo .controls{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:16px}
+  .wrx-promo .arrow,.wrx-promo .toggle{width:44px;height:44px;border-radius:50%;border:1px solid #c9d1c3;background:#fff;color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:18px;line-height:1}
+  .wrx-promo .arrow:hover,.wrx-promo .toggle:hover{border-color:var(--g);color:var(--g)}
+  .wrx-promo .dots{display:flex;gap:4px}
+  .wrx-promo .dot{width:44px;height:44px;border:0;background:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0}
+  .wrx-promo .dot::before{content:"";width:28px;height:4px;border-radius:2px;background:#c9d1c3;transition:background .3s}
+  .wrx-promo .dot[aria-current="true"]::before{background:var(--g)}
+  .wrx-promo :focus-visible{outline:3px solid var(--g);outline-offset:2px}
+  .wrx-promo .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  @media (max-width:860px){
+    .wrx-promo{padding:32px 16px}
+    .wrx-promo .slide{grid-template-columns:1fr;min-height:0}
+    .wrx-promo .offer{order:-1;padding:28px 16px}
+    .wrx-promo .copy{padding:26px 22px 28px}
+    .wrx-promo .btn{flex:1 1 auto;justify-content:center}
+    .wrx-promo .controls{gap:6px}
+    .wrx-promo .dot{width:30px}
+    .wrx-promo .dot::before{width:20px}
+  }
+  @media (prefers-reduced-motion:reduce){.wrx-promo .track{transition:none}}
+</style>
+<style>
+  /* Mobile-friendly fixes (Oct 2026): phones and tablets only. Desktop layout unchanged. */
+  @media (max-width:640px){
+    .wrx-promo .copy .eyebrow{font-size:12px}
+    .wrx-promo .arrow,.wrx-promo .toggle{flex:none}
+  }
+</style>
+
+<section class="wrx-promo" aria-roledescription="carousel" aria-label="Current WellnessRX Pharmacy promotions">
+  <div class="wrap">
+    <div class="viewport">
+      <div class="track" id="wrx-promo-track" aria-live="off">
+
+        <article class="slide dark" role="group" aria-roledescription="slide" aria-label="1 of 5: Flu shots and COVID vaccines available now">
+          <div class="copy">
+            <p class="eyebrow">Now available · Walk-ins welcome</p>
+            <h2>Flu shots &amp; COVID vaccines, <span>no appointment needed.</span></h2>
+            <p>Drop by WellnessRX Pharmacy anytime during store hours for your flu shot and updated COVID-19 vaccine. Get both in one quick visit. Just bring your Ontario health card.</p>
+            <div class="cta">
+              <a class="btn primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=WellnessRX+Pharmacy+152+Holland+St+E+Bradford+ON+L3Z+2A7">Get directions</a>
+              <a class="btn ghost" href="https://www.wellnessrxpharmacy.ca/service-page/vaccination-services-bradford">Prefer a set time? Book</a>
+            </div>
+            <p class="fine">Free for eligible Ontarians with a valid health card. <span style="white-space:nowrap">1–152 Holland St E</span>, Bradford · <span style="white-space:nowrap">905-775-7874</span>. Mon 10–6, Tue–Fri 9–6 (Wed until 7), <span style="white-space:nowrap">Sat 9–3</span>.</p>
+          </div>
+          <div class="offer" aria-hidden="true">
+            <p class="pre">Walk in today</p>
+            <p class="big word">Flu<span class="to">+</span>COVID</p>
+            <p class="post">Vaccines available now</p>
+            <span class="chip">Bring your health card</span>
+          </div>
+        </article>
+
+        <article class="slide" data-ends="2026-12-01T00:00:00-05:00" role="group" aria-roledescription="slide" aria-label="2 of 5: Cold and flu sale, code COLDFLU15, ends November 30">
+          <div class="copy">
+            <p class="eyebrow">Cold &amp; flu sale · Ends Nov 30</p>
+            <h2>15% off cold &amp; flu <span>supplements.</span></h2>
+            <p>Stock up on pharmacist-picked immune support, including vitamin C, vitamin D, zinc, elderberry and more. Every product is checked by our pharmacist for quality and medication interactions, so you can shop with confidence.</p>
+            <p class="code">Use code <strong>COLDFLU15</strong> at checkout</p>
+            <div class="cta">
+              <a class="btn primary" href="https://www.wellnessrxpharmacy.ca/category/immune-defence-collection">Shop immune support</a>
+              <a class="btn ghost" href="https://www.wellnessrxpharmacy.ca/service-page/minor-ailment-prescribing-bradford">Feeling unwell? See a pharmacist</a>
+            </div>
+            <p class="fine">15% off regular-price items in our Immune Defence collection with code COLDFLU15. Sale items excluded. Ends November 30, 2026 at 11:59 pm.</p>
+          </div>
+          <div class="offer" aria-hidden="true">
+            <p class="pre">Save</p>
+            <p class="big">15<small>%</small></p>
+            <p class="post">Cold &amp; flu supplements</p>
+            <span class="chip">Code COLDFLU15 · Ends Nov 30</span>
+          </div>
+        </article>
+
+        <article class="slide dark" data-ends="2027-01-01T00:00:00-05:00" role="group" aria-roledescription="slide" aria-label="3 of 5: Year-end sale">
+          <div class="copy">
+            <p class="eyebrow">Year-end sale · Ends December 31</p>
+            <h2>Save 15% to 75% on <span>selected wellness favourites.</span></h2>
+            <p>Our biggest sale of the year on professional-grade supplements and wellness essentials chosen by our pharmacist and nutritionist. Selection is limited, so the best deals go first.</p>
+            <div class="cta">
+              <a class="btn primary" href="https://www.wellnessrxpharmacy.ca/category/year-end-sale">Shop the year-end sale</a>
+              <a class="btn ghost" href="https://www.wellnessrxpharmacy.ca/category/pharmacists-picks">See Pharmacist's Picks</a>
+            </div>
+            <p class="fine">Selected items only, while quantities last. Free local Bradford delivery on $75+, GTA shipping on $99+, Canada-wide on $179+.</p>
+          </div>
+          <div class="offer" aria-hidden="true">
+            <p class="pre">Year-end sale</p>
+            <p class="big">15<span class="to">to</span>75<small>%</small></p>
+            <p class="post">Off selected items</p>
+            <span class="chip">Ends Dec 31</span>
+          </div>
+        </article>
+
+        <article class="slide" role="group" aria-roledescription="slide" aria-label="4 of 5: Nutrition consultation and supplement review">
+          <div class="copy">
+            <p class="eyebrow">Personalized care · Bradford &amp; virtual</p>
+            <h2>Not sure what your body needs? <span>Ask the experts.</span></h2>
+            <p>Book a 30-minute <strong>Supplement Review</strong> and we'll check what you take for quality, dose and interactions with your medications. Or start a 60-minute <strong>Nutrition Consultation</strong> with Nancy Tran, RHN for a plan built around your hormones, gut health and goals.</p>
+            <div class="cta">
+              <a class="btn primary" href="https://www.wellnessrxpharmacy.ca/service-page/in-person-initial-nutrition-consultation-bradford">Book a nutrition consultation</a>
+              <a class="btn ghost" href="https://www.wellnessrxpharmacy.ca/service-page/supplement-review-bradford">Book a supplement review</a>
+            </div>
+            <p class="fine">Virtual nutrition consultations available. Receipts provided for extended health benefit plans.</p>
+          </div>
+          <div class="offer" aria-hidden="true">
+            <p class="pre">Book one-on-one</p>
+            <p class="big">1:1</p>
+            <p class="post">Pharmacist + nutritionist care</p>
+            <span class="chip">Bring your supplements</span>
+          </div>
+        </article>
+
+        <article class="slide dark" role="group" aria-roledescription="slide" aria-label="5 of 5: Meal plans by Nancy Tran, RHN">
+          <div class="copy">
+            <p class="eyebrow">Meal plans · Subscriptions &amp; one-time plans</p>
+            <h2>Healthy eating, <span>already planned for you.</span></h2>
+            <p>Done-for-you meal plans from Nancy Tran, RHN, with grocery lists and simple recipes for busy weeks. Choose a monthly subscription for fresh plans all year, or a one-time plan for hormone balance, fat loss or postpartum recovery.</p>
+            <div class="cta">
+              <a class="btn primary" href="https://www.wellnessrxpharmacy.ca/meal-plans-subscribtions-bradford">Explore meal plans</a>
+              <a class="btn ghost" href="https://www.wellnessrxpharmacy.ca/pricing-plans/meal-plans-bradford">Start a subscription</a>
+            </div>
+            <p class="fine">Subscriptions from $29/month. One-time plans from $27.99. Save them to your phone and use them at your own pace.</p>
+          </div>
+          <div class="offer" aria-hidden="true">
+            <p class="pre">Meal plans from</p>
+            <p class="big">$29<small>/mo</small></p>
+            <p class="post">Created by Nancy Tran, RHN</p>
+            <span class="chip">One-time plans from $27.99</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="toggle" type="button" id="wrx-promo-toggle" aria-label="Pause promotions">&#10073;&#10073;</button>
+      <button class="arrow" type="button" id="wrx-promo-prev" aria-label="Previous promotion">&#8249;</button>
+      <div class="dots" id="wrx-promo-dots">
+        <button class="dot" type="button" aria-label="Show promotion 1: Flu and COVID vaccines" aria-current="true"></button>
+        <button class="dot" type="button" aria-label="Show promotion 2: Cold and flu sale"></button>
+        <button class="dot" type="button" aria-label="Show promotion 3: Year-end sale"></button>
+        <button class="dot" type="button" aria-label="Show promotion 4: Nutrition and supplement review"></button>
+        <button class="dot" type="button" aria-label="Show promotion 5: Meal plans"></button>
+      </div>
+      <button class="arrow" type="button" id="wrx-promo-next" aria-label="Next promotion">&#8250;</button>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var DELAY = 6000; // ms per slide
+
+  var root = document.querySelector('.wrx-promo');
+  var track = document.getElementById('wrx-promo-track');
+  var slides = [].slice.call(track.children);
+  var dots = [].slice.call(document.querySelectorAll('#wrx-promo-dots .dot'));
+  var toggle = document.getElementById('wrx-promo-toggle');
+
+  // slides with data-ends hide themselves after that date (cold & flu ends Nov 30, year-end sale ends Dec 31, Toronto time)
+  var now = new Date();
+  for (var k = slides.length - 1; k >= 0; k--) {
+    var ends = slides[k].getAttribute('data-ends');
+    if (ends && now >= new Date(ends)) { slides[k].remove(); dots[k].remove(); slides.splice(k, 1); dots.splice(k, 1); }
+  }
+  if (slides.length < 2) { root.querySelector('.controls').style.display = 'none'; return; }
+
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var i = 0, timer = null, userPaused = reduced, hoverPaused = false;
+
+  function show(n){
+    i = (n + slides.length) % slides.length;
+    track.style.transform = 'translateX(' + (-100 * i) + '%)';
+    slides.forEach(function(s, k){
+      var on = k === i;
+      s.setAttribute('aria-hidden', on ? 'false' : 'true');
+      s.querySelectorAll('a').forEach(function(a){ a.tabIndex = on ? 0 : -1; });
+    });
+    dots.forEach(function(d, k){ d.setAttribute('aria-current', k === i ? 'true' : 'false'); });
+  }
+  function stop(){ clearInterval(timer); timer = null; }
+  function start(){ stop(); if (!userPaused && !hoverPaused) timer = setInterval(function(){ show(i + 1); }, DELAY); }
+  function setToggle(){
+    toggle.innerHTML = userPaused ? '&#9654;' : '&#10073;&#10073;';
+    toggle.setAttribute('aria-label', userPaused ? 'Play promotions' : 'Pause promotions');
+    track.setAttribute('aria-live', userPaused ? 'polite' : 'off');
+  }
+
+  document.getElementById('wrx-promo-prev').addEventListener('click', function(){ show(i - 1); start(); });
+  document.getElementById('wrx-promo-next').addEventListener('click', function(){ show(i + 1); start(); });
+  dots.forEach(function(d, k){ d.addEventListener('click', function(){ show(k); start(); }); });
+  toggle.addEventListener('click', function(){ userPaused = !userPaused; setToggle(); start(); });
+
+  root.addEventListener('mouseenter', function(){ hoverPaused = true; stop(); });
+  root.addEventListener('mouseleave', function(){ hoverPaused = false; start(); });
+  root.addEventListener('focusin', function(){ hoverPaused = true; stop(); });
+  root.addEventListener('focusout', function(e){ if (!root.contains(e.relatedTarget)) { hoverPaused = false; start(); } });
+
+  // swipe on phones
+  var x0 = null;
+  track.addEventListener('touchstart', function(e){ x0 = e.touches[0].clientX; hoverPaused = true; stop(); }, {passive:true});
+  track.addEventListener('touchend', function(e){
+    if (x0 !== null) { var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) show(dx < 0 ? i + 1 : i - 1); }
+    x0 = null; hoverPaused = false; start();
+  });
+
+  // GA4 click tracking (G-8QEH53BKY9 is on the site); harmless if gtag is absent
+  root.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      try { (window.parent.gtag || window.gtag)('event', 'select_promotion', { promotion_name: a.closest('.slide').getAttribute('aria-label'), creative_slot: a.textContent.trim() }); } catch(e){}
+    });
+  });
+
+  // Wix embeds load in an iframe: open links in the main window, not inside the box
+  root.querySelectorAll('a').forEach(function(a){ a.target = '_top'; });
+
+  setToggle(); show(0); start();
+})();
+</script>

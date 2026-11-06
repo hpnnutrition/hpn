@@ -1,0 +1,443 @@
+<!-- WellnessRX Pharmacy · Homepage body · Wix Embed HTML · built 2026-10-27 · prices + links verified against Wix Bookings and Stores that day · every link opens in a new window -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  .wrx-home{--g:#2E8B3A;--gd:#1F6A2B;--ink:#16201A;--body:#3f4a43;--muted:#6b756e;--line:#dfe5dc;
+    --bg:#f5f7f2;--paper:#ffffff;--mint:#e7f1e4;--oat:#eef1e9;
+    font-family:Archivo,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);
+    font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;margin:0}
+  .wrx-home *{box-sizing:border-box}
+  .wrx-home a{color:inherit}
+  .wrx-home .wrap{max-width:1120px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-left,0px))}
+  .wrx-home .mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+  .wrx-home h1,.wrx-home h2,.wrx-home h3{font-family:Fraunces,Georgia,serif;color:var(--ink);margin:0;letter-spacing:-.01em}
+  .wrx-home h2{font-size:clamp(30px,3.6vw,42px);line-height:1.1;font-weight:600}
+  .wrx-home .lead{color:var(--body);font-size:17px;max-width:600px;margin:14px 0 0}
+  .wrx-home section{padding:72px 0;border-top:1px solid var(--line)}
+  .wrx-home section:first-child{border-top:0}
+  .wrx-home .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 20px;border-radius:3px;font-weight:600;font-size:15px;text-decoration:none;transition:background .15s,border-color .15s}
+  .wrx-home .btn-g{background:var(--g);color:#fff;border:1px solid var(--g)}
+  .wrx-home .btn-g:hover{background:var(--gd)}
+  .wrx-home .btn-o{background:#fff;color:var(--ink);border:1px solid #cfd6cc}
+  .wrx-home .btn-o:hover{border-color:var(--g)}
+  .wrx-home .arrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--g);text-decoration:none;font-weight:500}
+  .wrx-home .arrow:hover{text-decoration:underline}
+
+  /* Hero */
+  .wrx-home .hero{padding:56px 0 56px}
+  .wrx-home .hero .wrap{display:grid;grid-template-columns:1.45fr 1fr;gap:56px;align-items:center}
+  .wrx-home .hero h1{font-size:clamp(38px,5.2vw,58px);line-height:1.04;font-weight:700}
+  .wrx-home .hero h1 em{font-style:normal;color:var(--g)}
+  .wrx-home .hero .lead{font-size:18px;max-width:560px}
+  .wrx-home .ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+  .wrx-home .side{border-left:1px solid #9aa59c;padding-left:16px}
+  .wrx-home .side div{margin:0 0 16px}
+  .wrx-home .side div:last-child{margin:0}
+  .wrx-home .side b{display:block;font-size:14px}
+  .wrx-home .side p{margin:2px 0 0;font-size:14px;color:var(--body);line-height:1.5}
+  .wrx-home .trust{display:flex;flex-wrap:wrap;gap:8px 22px;margin:26px 0 0;padding:0;list-style:none;font-size:14px;color:var(--body)}
+  .wrx-home .trust li{display:flex;align-items:center;gap:7px}
+  .wrx-home .trust svg{flex:none;color:var(--g)}
+  .wrx-home .trust a{color:var(--g);font-weight:600;text-decoration:none}
+  .wrx-home .trust a:hover{text-decoration:underline}
+
+  /* Help chooser */
+  .wrx-home .help{background:var(--paper)}
+  .wrx-home .help-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;margin-bottom:28px}
+  .wrx-home .help-head h2{font-size:clamp(26px,3vw,32px)}
+  .wrx-home .help-head span{color:var(--muted);font-size:14px}
+  .wrx-home .paths{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+  .wrx-home .path{display:flex;flex-direction:column;padding:26px 20px 24px;border-right:1px solid var(--line);text-decoration:none;color:inherit;transition:background .15s}
+  .wrx-home .path:last-child{border-right:0}
+  .wrx-home .path:hover{background:#f7faf5}
+  .wrx-home .path svg{color:var(--g);margin-bottom:12px}
+  .wrx-home .path h3{font-size:19px;line-height:1.2;font-weight:600;margin-bottom:8px}
+  .wrx-home .path p{font-size:14px;color:var(--body);margin:0 0 22px;flex:1}
+
+  /* Booking menu */
+  .wrx-home .menu{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px;align-items:start}
+  .wrx-home .col{background:#fff;border:1px solid var(--line);border-radius:3px;box-shadow:0 10px 24px -20px rgba(20,40,24,.35)}
+  .wrx-home .col-h{background:var(--oat);padding:18px 20px;border-bottom:1px solid var(--line)}
+  .wrx-home .col-h h3{font-size:18px;font-weight:600}
+  .wrx-home .col-h p{margin:4px 0 0;font-size:12.5px;color:var(--muted)}
+  .wrx-home .row{display:flex;justify-content:space-between;gap:12px;padding:13px 20px;border-bottom:1px solid var(--line);text-decoration:none;color:inherit}
+  .wrx-home .row:last-child{border-bottom:0}
+  .wrx-home .row:hover{background:#f7faf5}
+  .wrx-home .row b{font-weight:500;font-size:14.5px;display:block}
+  .wrx-home .row small{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted)}
+  .wrx-home .price{font-family:"IBM Plex Mono",monospace;font-size:13px;white-space:nowrap;color:var(--ink)}
+  .wrx-home .price.free{color:var(--g)}
+  .wrx-home .cover{display:grid;grid-template-columns:1fr 1fr;gap:40px;background:var(--mint);padding:26px 24px;margin-top:28px;border-radius:3px}
+  .wrx-home .cover .mono{color:var(--gd);margin-bottom:8px}
+  .wrx-home .cover p{margin:0;font-size:14px;color:var(--body)}
+  .wrx-home .cover strong{color:var(--ink)}
+  .wrx-home .all{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px 28px}
+
+  /* Shop */
+  .wrx-home .shop{background:var(--oat)}
+  .wrx-home .shop .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:start}
+  .wrx-home .goals{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);background:#fff}
+  .wrx-home .goals a{padding:18px 14px;font-size:14px;text-decoration:none;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .15s,color .15s}
+  .wrx-home .goals a:nth-child(3n){border-right:0}
+  .wrx-home .goals a:nth-last-child(-n+3){border-bottom:0}
+  .wrx-home .goals a:hover{background:#f3f8f1;color:var(--g)}
+
+  /* Product standard */
+  .wrx-home .std .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:start}
+  .wrx-home .six{list-style:none;padding:0;margin:28px 0 0}
+  .wrx-home .six li{display:grid;grid-template-columns:28px 1fr;margin-bottom:14px}
+  .wrx-home .six span{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--g);padding-top:3px}
+  .wrx-home .six b{font-size:15px}
+  .wrx-home .six p{margin:2px 0 0;font-size:13.5px;color:var(--body)}
+  .wrx-home .example{background:#fff;border:1px solid var(--line);border-top:3px solid var(--g);padding:26px 24px;box-shadow:0 18px 36px -28px rgba(20,40,24,.4)}
+  .wrx-home .example h3{font-size:20px;font-weight:600;margin-bottom:14px}
+  .wrx-home .ex-row{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:13px 0;border-top:1px solid var(--line);font-size:13.5px;color:var(--body)}
+  .wrx-home .ex-row .mono{margin:0;font-size:11px;padding-top:2px}
+  .wrx-home .ex-row strong{color:var(--ink)}
+  .wrx-home .ask{display:flex;gap:10px;align-items:flex-start;background:var(--mint);padding:14px;margin-top:14px;font-size:13.5px;color:var(--body);text-decoration:none}
+  .wrx-home .ask svg{flex:none;color:var(--g);margin-top:2px}
+  .wrx-home .ask strong{color:var(--ink)}
+  .wrx-home .ask:hover u{color:var(--g)}
+
+  /* Team */
+  .wrx-home .team{background:var(--paper)}
+  .wrx-home .people{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);margin-top:36px}
+  .wrx-home .person{padding:28px 26px;display:flex;flex-direction:column}
+  .wrx-home .person+.person{border-left:1px solid var(--line)}
+  .wrx-home .p-top{display:flex;gap:16px;align-items:center;margin-bottom:16px}
+  .wrx-home .p-top img{width:76px;height:76px;border-radius:50%;object-fit:cover;flex:none;border:2px solid var(--mint)}
+  .wrx-home .p-top .mono{margin:0 0 4px}
+  .wrx-home .person h3{font-size:22px;font-weight:600}
+  .wrx-home .cred{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--g);margin:2px 0 0}
+  .wrx-home .person p.bio{font-size:14px;color:var(--body);margin:0 0 12px}
+  .wrx-home .chips{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 20px;padding:0;list-style:none}
+  .wrx-home .chips li{font-size:12px;background:var(--mint);color:var(--gd);padding:4px 10px;border-radius:999px}
+  .wrx-home .p-links{margin-top:auto;display:flex;flex-wrap:wrap;gap:10px 24px}
+
+  /* Press */
+  .wrx-home .press{background:var(--bg)}
+  .wrx-home .press-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}
+  .wrx-home .pc{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);padding:20px 18px;text-decoration:none;color:inherit;transition:border-color .15s,transform .15s}
+  .wrx-home .pc:hover{border-color:var(--g);transform:translateY(-2px)}
+  .wrx-home .pc .mono{font-size:11px;margin-bottom:8px;color:var(--gd)}
+  .wrx-home .pc h3{font-size:16px;line-height:1.3;font-weight:600;margin-bottom:14px;flex:1}
+  .wrx-home .pc .arrow{font-size:11px}
+
+  /* FAQ */
+  .wrx-home .faq{background:var(--paper)}
+  .wrx-home .faq .wrap{display:grid;grid-template-columns:1fr 1.6fr;gap:48px;align-items:start}
+  .wrx-home details{border-top:1px solid var(--line);padding:16px 0}
+  .wrx-home details:last-child{border-bottom:1px solid var(--line)}
+  .wrx-home summary{cursor:pointer;list-style:none;font-weight:600;font-size:16px;display:flex;justify-content:space-between;gap:16px}
+  .wrx-home summary::-webkit-details-marker{display:none}
+  .wrx-home summary::after{content:"+";font-family:"IBM Plex Mono",monospace;color:var(--g);font-size:18px;line-height:1}
+  .wrx-home details[open] summary::after{content:"\2212"}
+  .wrx-home details p{margin:10px 0 0;font-size:14.5px;color:var(--body)}
+  .wrx-home details a{color:var(--g);font-weight:600}
+
+  /* Closing CTA */
+  .wrx-home .close{background:var(--g);color:#fff;text-align:center;padding:76px 0;border-top:0}
+  .wrx-home .close h2{color:#fff}
+  .wrx-home .close p{max-width:440px;margin:14px auto 28px;font-size:15px;color:#eef6ec}
+  .wrx-home .close .ctas{justify-content:center;margin:0}
+  .wrx-home .btn-w{background:#fff;color:var(--gd);border:1px solid #fff}
+  .wrx-home .btn-line{background:transparent;color:#fff;border:1px solid #fff}
+  .wrx-home .btn-line:hover{background:rgba(255,255,255,.1)}
+
+  @media (max-width:960px){
+    .wrx-home .hero .wrap,.wrx-home .shop .wrap,.wrx-home .std .wrap,.wrx-home .faq .wrap{grid-template-columns:1fr;gap:32px}
+    .wrx-home .paths{grid-template-columns:1fr 1fr}
+    .wrx-home .path:nth-child(2){border-right:0}
+    .wrx-home .path:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    .wrx-home .menu{grid-template-columns:1fr}
+    .wrx-home .press-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:640px){
+    .wrx-home section{padding:52px 0}
+    .wrx-home .hero{padding:40px 0}
+    .wrx-home .ctas .btn{width:100%}
+    .wrx-home .paths{grid-template-columns:1fr}
+    .wrx-home .path{border-right:0;border-bottom:1px solid var(--line)}
+    .wrx-home .path:last-child{border-bottom:0}
+    .wrx-home .cover{grid-template-columns:1fr;gap:20px}
+    .wrx-home .goals{grid-template-columns:1fr 1fr}
+    .wrx-home .goals a:nth-child(3n){border-right:1px solid var(--line)}
+    .wrx-home .goals a:nth-child(2n){border-right:0}
+    .wrx-home .goals a:nth-last-child(-n+3){border-bottom:1px solid var(--line)}
+    .wrx-home .goals a:last-child{border-bottom:0}
+    .wrx-home .ex-row{grid-template-columns:1fr;gap:4px}
+    .wrx-home .people{grid-template-columns:1fr}
+    .wrx-home .person+.person{border-left:0;border-top:1px solid var(--line)}
+    .wrx-home .press-grid{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){.wrx-home *{transition:none!important}}
+</style>
+<style>
+  /* Mobile-friendly fixes (Oct 2026): phones and tablets only. Desktop layout unchanged. */
+  @media (max-width:1024px){
+    .wrx-home a.arrow{display:inline-block;padding-top:14px;padding-bottom:14px}
+    .wrx-home .trust li>a{display:inline-block;padding:11px 0;margin:-11px 0}
+    .wrx-home summary{min-height:44px;align-items:center}
+  }
+  @media (max-width:640px){
+    .wrx-home .row small,.wrx-home .ex-row .mono,.wrx-home .pc .mono,.wrx-home .pc .arrow,.wrx-home .cred{font-size:12px}
+  }
+</style>
+
+<div class="wrx-home">
+
+  <!-- 1 · HERO -->
+  <section class="hero" aria-labelledby="wrx-hero-title">
+    <div class="wrap">
+      <div>
+        <p class="mono">Bradford West Gwillimbury, Ontario</p>
+        <h1 id="wrx-hero-title">Skip the walk-in. <em>Start with your pharmacist.</em></h1>
+        <p class="lead">A pharmacist-led wellness pharmacy where prescriptions, supplements and nutrition are handled by the same team, so nothing you take works against anything else you take.</p>
+        <div class="ctas">
+          <a class="btn btn-g" href="https://www.wellnessrxpharmacy.ca/service-page/minor-ailment-prescribing-bradford" target="_blank" rel="noopener">Book a pharmacist assessment, free with OHIP</a>
+          <a class="btn btn-o" href="https://docs.google.com/forms/d/e/1FAIpQLSfb_YF65iRw2ku84DHfj9YcXC15j3oOM-yJAieQ3Ngy7BDOtA/viewform" target="_blank" rel="noopener">Transfer my prescription</a>
+        </div>
+        <ul class="trust">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>28 minor ailments, no doctor's visit</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Pharmacist + nutritionist under one roof</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>As featured in <a href="https://canadianhealthcarenetwork.ca/husband-and-wife-team-bring-nutrition-and-pharmacy-services-together" target="_blank" rel="noopener">Canadian Healthcare Network</a></li>
+        </ul>
+      </div>
+      <div class="side">
+        <div><b>Phillip Kim, PharmD</b><p>Pharmacy Director. 10+ years in practice, clinical instructor with the University of Toronto pharmacy program.</p></div>
+        <div><b>Nancy Tran, RHN</b><p>Registered Holistic Nutritionist &amp; Strength and Conditioning Specialist.</p></div>
+        <div><b>Same-day assessments</b><p>Most minor ailments assessed and, where appropriate, prescribed in a single 30-minute visit.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · WHAT DO YOU NEED HELP WITH -->
+  <section class="help" aria-labelledby="wrx-help-title">
+    <div class="wrap">
+      <div class="help-head">
+        <h2 id="wrx-help-title">What do you need help with today?</h2>
+        <span>Pick a starting point. We'll take it from there.</span>
+      </div>
+      <div class="paths">
+        <a class="path" href="https://docs.google.com/forms/d/e/1FAIpQLSfb_YF65iRw2ku84DHfj9YcXC15j3oOM-yJAieQ3Ngy7BDOtA/viewform" target="_blank" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="7" width="11" height="14" rx="2"/><path d="M8 3h7v4H8z"/><path d="m13 16 2 2 4-4"/></svg>
+          <h3>Transfer my prescription</h3>
+          <p>Send us the bottle photo or the pharmacy name. We call them, move everything over, and set up blister packs if you want them.</p>
+          <span class="arrow">Start transfer →</span>
+        </a>
+        <a class="path" href="https://www.wellnessrxpharmacy.ca/service-page/minor-ailment-prescribing-bradford" target="_blank" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"/></svg>
+          <h3>Book a pharmacist assessment</h3>
+          <p>UTIs, pink eye, cold sores, acne, allergies, acid reflux, hemorrhoids and more: 28 conditions in all. No doctor's appointment, and no cost with a valid Ontario health card.</p>
+          <span class="arrow">See availability →</span>
+        </a>
+        <a class="path" href="https://www.wellnessrxpharmacy.ca/category/pharmacists-picks" target="_blank" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14l-1 13H6z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
+          <h3>Shop pharmacist's picks</h3>
+          <p>A short, curated shelf, not a catalogue. Every product checked against your medications before it earns a place on it.</p>
+          <span class="arrow">Start here →</span>
+        </a>
+        <a class="path" href="https://www.wellnessrxpharmacy.ca/nutrition-consultation-bradford" target="_blank" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19 14 10"/></svg>
+          <h3>Book nutrition support</h3>
+          <p>Hormones, gut health, weight, pregnancy and postpartum, with a Registered Holistic Nutritionist who works alongside your pharmacist.</p>
+          <span class="arrow">See consultations →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · BOOK BY SERVICE -->
+  <section class="book" aria-labelledby="wrx-book-title">
+    <div class="wrap">
+      <p class="mono">Book by service</p>
+      <h2 id="wrx-book-title">Every appointment, named<br>for what it actually is</h2>
+      <p class="lead">Pick the visit that matches your situation. Pharmacy services are publicly funded: bring your Ontario health card and there's nothing to pay. Nutrition and naturopathic visits are paid privately; prices in CAD.</p>
+
+      <div class="menu">
+        <div class="col">
+          <div class="col-h"><h3>Pharmacy &amp; clinical</h3><p>With Phillip Kim, PharmD · free with a valid Ontario health card</p></div>
+          <a class="row" href="https://www.wellnessrxpharmacy.ca/service-page/minor-ailment-prescribing-bradford" target="_blank" rel="noopener"><span><b>Minor Ailment Assessment</b><small>30 min · online or in person</small></span><span class="price free">Free</span></a>
+          <a class="row" href="https://www.wellnessrxpharmacy.ca/service-page/book-medscheck-review-bradford" target="_blank" rel="noopener"><span><b>MedsCheck Review</b><small>30 min · if you take 3+ medications</small></span><span class="price free">Free</span></a>
+          <a class="row" href="https://www.wellnessrxpharmacy.ca/service-page/vaccination-services-bradford" target="_blank" rel="noopener"><span><b>Vaccination Appointment</b><small>30 min · flu &amp; COVID</small></span><span class="price free">Most free</span></a>
+          <a class="row" href="https://www.wellnessrxpharmacy.ca/service-page/blister-pack-service-bradford" target="_blank" rel="noopener"><span><b>Blister Pack Setup</b><small>60 min · compliance packaging</small></span><span class="price free">Free</span></a>
+          <a class="row" href="https://www.wellnessrxpharmacy.ca/service-page/smoking-cessation-consultation" target="_blank" rel="noopener"><span><b>Smoking Cessation Consult</b><small>20 min · funded for ODB recipients</small></span><span class="price free">Free</span></a>
+        </div>
+        <div class="col">
+          <div class="col-h"><h3>Nutrition &amp; wellness</h3><p>With Nancy Tran, RHN · paid privately</p></div>
+          <a class="row" href="https://www.wellnessrxpharmacy.ca/service-page/in-person-initial-nutrition-consultation-bradford" target="_blank" rel="noopener"><span><b>Initial Nutrition Consultation</b><small>60 min · in person</small></span><span class="price">$120</span></a>
+          <a class="row" href="https://www.wellnessrxpharmacy.ca/service-page/virtual-initial-nutrition-consultation" target="_blank" rel="noopener"><span><b>Virtual Nutrition Consultation</b><small>60 min · online</small></span><span class="price">$75</span></a>
+          <a class="row" href="https://www.wellnessrxpharmacy.ca/service-page/supplement-review-bradford" target="_blank" rel="noopener"><span><b>Supplement Review</b><small>30 min · bring what you take</small></span><span class="price">$55</span></a>
+          <a class="row" href="https://www.wellnessrxpharmacy.ca/service-page/follow-up-nutrition-consultation-bradford" target="_blank" rel="noopener"><span><b>Nutrition Follow-Up</b><small>30 min · online</small></span><span class="price">$65</span></a>
+          <a class="row" href="https://www.wellnessrxpharmacy.ca/service-page/custom-meal-plan-bradford" target="_blank" rel="noopener"><span><b>Custom Meal Plan</b><small>built after your consult</small></span><span class="price">from $85</span></a>
+        </div>
+        <div class="col">
+          <div class="col-h"><h3>Testing &amp; free checks</h3><p>Walk in or reserve a time</p></div>
+          <a class="row" href="https://www.wellnessrxpharmacy.ca/service-page/free-wellness-call-bradford" target="_blank" rel="noopener"><span><b>15-Min Wellness Call</b><small>not sure where to start? start here</small></span><span class="price free">Free</span></a>
+          <a class="row" href="https://www.wellnessrxpharmacy.ca/service-page/blood-pressure-check-bradford" target="_blank" rel="noopener"><span><b>Blood Pressure Check</b><small>15 min · in person</small></span><span class="price free">Free</span></a>
+          <a class="row" href="https://www.wellnessrxpharmacy.ca/service-page/blood-glucose-monitoring-bradford" target="_blank" rel="noopener"><span><b>Blood Glucose Review</b><small>15 min · bring your meter</small></span><span class="price free">Free</span></a>
+          <a class="row" href="https://www.wellnessrxpharmacy.ca/service-page/food-sensitivity-test-bradford" target="_blank" rel="noopener"><span><b>Food Sensitivity Test</b><small>60 min · results reviewed with you</small></span><span class="price">from $299</span></a>
+          <a class="row" href="https://www.wellnessrxpharmacy.ca/service-page/comprehensive-naturopathic-intake" target="_blank" rel="noopener"><span><b>Naturopathic Intake</b><small>60 min · comprehensive</small></span><span class="price">$275</span></a>
+        </div>
+      </div>
+
+      <div class="cover">
+        <div>
+          <p class="mono">What OHIP covers</p>
+          <p>Pharmacist assessments for all 28 authorized minor ailments and MedsCheck reviews are <strong>free to anyone with a valid Ontario health card</strong>. Flu shots are free for anyone who lives, works or studies in Ontario, and smoking cessation support is free for Ontario Drug Benefit recipients. No Ontario health card? The minor ailment assessment is $19.</p>
+        </div>
+        <div>
+          <p class="mono">What your benefits plan may cover</p>
+          <p>Nutrition, naturopathic and food sensitivity services are <strong>paid at the time of your visit</strong>. Naturopathic visits are reimbursed by many extended health plans, and some plans cover nutrition counselling. We give you a detailed receipt to submit. Check your plan before booking if reimbursement matters to you.</p>
+        </div>
+      </div>
+      <div class="all">
+        <a class="arrow" href="https://www.wellnessrxpharmacy.ca/pharmacy-services-bradford" target="_blank" rel="noopener">All pharmacy services →</a>
+        <a class="arrow" href="https://www.wellnessrxpharmacy.ca/wellness-services-bradford" target="_blank" rel="noopener">All wellness services →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · SHOP -->
+  <section class="shop" aria-labelledby="wrx-shop-title">
+    <div class="wrap">
+      <div>
+        <p class="mono">The shop</p>
+        <h2 id="wrx-shop-title">Start with the short shelf</h2>
+        <p class="lead">Hundreds of products is a warehouse, not advice. <strong>Pharmacist's Picks</strong> is the shelf we'd actually point you to: in stock, third-party tested, and screened against common prescriptions.</p>
+        <div class="ctas"><a class="btn btn-g" href="https://www.wellnessrxpharmacy.ca/category/pharmacists-picks" target="_blank" rel="noopener">Browse Pharmacist's Picks</a></div>
+      </div>
+      <div>
+        <p class="mono">Or shop by goal</p>
+        <nav class="goals" aria-label="Shop by health goal">
+          <a href="https://www.wellnessrxpharmacy.ca/category/gut-health-reset-collection" target="_blank" rel="noopener">Gut health</a>
+          <a href="https://www.wellnessrxpharmacy.ca/category/womens-hormone-support-collection" target="_blank" rel="noopener">Women's hormones</a>
+          <a href="https://www.wellnessrxpharmacy.ca/category/better-sleep-collection" target="_blank" rel="noopener">Sleep support</a>
+          <a href="https://www.wellnessrxpharmacy.ca/category/prenatal-pregnancy-collection" target="_blank" rel="noopener">Prenatal &amp; postpartum</a>
+          <a href="https://www.wellnessrxpharmacy.ca/category/immune-defence-collection" target="_blank" rel="noopener">Immune support</a>
+          <a href="https://www.wellnessrxpharmacy.ca/category/energy-support-collection" target="_blank" rel="noopener">Energy</a>
+          <a href="https://www.wellnessrxpharmacy.ca/category/bone-joint-muscle-collection" target="_blank" rel="noopener">Bone, joint &amp; muscle</a>
+          <a href="https://www.wellnessrxpharmacy.ca/category/brain-focus-collection" target="_blank" rel="noopener">Brain &amp; focus</a>
+          <a href="https://www.wellnessrxpharmacy.ca/category/weight-loss-metabolism-collection" target="_blank" rel="noopener">Weight management</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · PRODUCT STANDARD -->
+  <section class="std" aria-labelledby="wrx-std-title">
+    <div class="wrap">
+      <div>
+        <p class="mono">Our product standard</p>
+        <h2 id="wrx-std-title">Every product page answers the same six questions</h2>
+        <p class="lead">You should never have to guess whether a supplement is right for you, or whether it will interfere with what you're already taking. So we answer it on the page, before you add anything to a cart.</p>
+        <ol class="six">
+          <li><span>01</span><div><b>Why WellnessRX recommends it</b><p>The specific reason it's on our shelf, in a pharmacist's words.</p></div></li>
+          <li><span>02</span><div><b>Who it's best for</b><p>And, just as usefully, who should skip it.</p></div></li>
+          <li><span>03</span><div><b>How to take it</b><p>Dose, timing, with or without food, how long before you'd notice anything.</p></div></li>
+          <li><span>04</span><div><b>Medication cautions</b><p>Known interactions with common prescriptions, flagged plainly.</p></div></li>
+          <li><span>05</span><div><b>Pickup &amp; shipping</b><p>What's in stock today in Bradford, and what ships.</p></div></li>
+          <li><span>06</span><div><b>Ask our pharmacist</b><p>A real question box that reaches Phillip, not a chatbot.</p></div></li>
+        </ol>
+      </div>
+      <div class="example">
+        <p class="mono">Example · how a product page reads</p>
+        <h3>Magnesium Bisglycinate</h3>
+        <div class="ex-row"><p class="mono">Why we stock it</p><div>The gentlest common form on the digestive tract. It's the one we recommend when someone has tried magnesium citrate and given up on it.</div></div>
+        <div class="ex-row"><p class="mono">Best for</p><div><strong>Sleep quality, muscle cramps, stress load.</strong> Often the first thing we suggest for people who wake at 3am.</div></div>
+        <div class="ex-row"><p class="mono">How to take it</p><div>200–400 mg elemental, evening, with or without food. Give it two to three weeks.</div></div>
+        <div class="ex-row"><p class="mono">Medication cautions</p><div>Separate by 2 hours from levothyroxine and from tetracycline or quinolone antibiotics. Check with us first if you have reduced kidney function.</div></div>
+        <div class="ex-row"><p class="mono">Pickup &amp; shipping</p><div>In stock in Bradford today. Free local delivery on $75+, free GTA &amp; Ontario shipping on $99+, free Canada-wide shipping on $129+.</div></div>
+        <a class="ask" href="https://www.wellnessrxpharmacy.ca/contact-us-bradford-pharmacy" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg>
+          <span><strong>Not sure this is the right one for you?</strong> <u>Ask our pharmacist</u>. We answer within one business day.</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · TEAM -->
+  <section class="team" aria-labelledby="wrx-team-title">
+    <div class="wrap">
+      <p class="mono">Who you'll be talking to</p>
+      <h2 id="wrx-team-title">The pharmacist and<br>nutritionist team</h2>
+      <p class="lead">Most pharmacies hand you a bag. We built this one so the person filling your prescription and the person planning your meals actually talk to each other.</p>
+      <div class="people">
+        <article class="person">
+          <div class="p-top">
+            <img src="data:image/webp;base64,UklGRiYWAABXRUJQVlA4IBoWAADQZQCdASrwAPAAPmEuk0akIqGjJzQq4IAMCWVu4DBZuPilA6gYXyFoueWe8L6LlS8Oex/NE6I86//Q9ZnmFeez09eb7zcPSHvQHoodM/5QFZf6Ffk80243+ZfkaNJgEP73E38Xz/1Cc8B/v+XX649hDpQMkC3jLd58ovXcCMc76q7lZ+h6NU0/5fYRgjSCvWnpIOHCZGdhKYNds7ls+5jhMSd+m+/LQpQ2x4T1cFMkZdLn3jw+4WMVJhuJwhvboUtSRVOd6n7ZSSERePE7D3N84t7vg6XJH8sq4PYezkFwuMIGMDetQKqOafArizkWn9udLCHLP+rpDw4WhTNwZSgjK1ha2JEwS3y2BOLwihhDaiRo32YYutt2ev305VZ1ZRhO+KINt6vg6UNxS5IfgeKS7kSgxXUJmShK1Kc8CjcNwbqvpAaMnJBIJK11nSNZ0Fsy0aH1fIYqrvE29qkQOG6QUwHs/Ay4CsG8iFNXI4Yin5aWJjE8XP7HYbU5+RC8+Yt6gY7Uhhhobmatp2cbVnCYxTxYbA2Dm7wJOReMmjUj8nEnAgv8ns/BoZR3BxmGZcEW9i94rqJJ8NB6tnHPdfLmrZ7ACwmzdRl1J6j/Zl0OBvyjSpQv2nKMIpLR3r55bQFgY3cI2gb+PFbIL4cujbz/EtRlBGJqL61PHX7/V/dF7h0ApRGJuaNo50W15JYBdLGNBK8Lj9wCT+kcnO5W89COAHxwmpOUK+MWdGOnts3tFJlRUzCp1Wa6jHrtinI+pGP5KlTqD4OHKS0Rwqix/+JwcuBdmQN9jdjL6v43WFbPn8VbEqGTCiia2aWfSI2upprXtGQ+pDgKXlTA3/r//WDUa9JG3petEMMuuzUNv5iWVfXvGlDpejPm3xc3S6HfMd1GmK2nb/WcTQAN0d3w2W1keHGUD3dwLtrEfiMK8r9QVG9ltofpgbDq3+57AFnfFTm2zlehmcrH9USHzLOZc854ydM9D1ZMdB+XNHIaCi2oeEJCltS8T3KwytOjhOmBt02fOfAwPnHt9b8VAeq51WtI31u1l7m8j3C1x6lPLMYHlG0yyZ8UU60WbhL1iyT2VEIi6+dGxBAAAP7lG0JWVbB9xXoMZDLeW8A8LnrGLB6GOQ0RlmR1LZKM+9F618AJy9ezAFIgvfpcM9OWnsIPh0R1E0UdkOca5zdCHoqgOat69C/SfZaZHvBCDuWd9K5LwkSfUG0TbeUzeimcA39/vvNUsD+4tp9hf5/R6K1gUsegn6PlbiTIdU6eoJPyas/6KE2z7n/v67QkUwwFnvLg4MeFC2GPAan9sdISMZXcks5h9m/F6+U51T36zGnKmfypX7kc8Fevpov0Mh23pPxIvv6OfSyzFCvzC6TvoR1lGbEeMaXCdwugMyyxbrCbgv6Z+tOHo2DBWV47kpQPcvD65CWO/mKXzzVojryKbx8UWIvIRiVgvNtvJpNGlAGectzphUO6alICC4wmD8GamPnj2FpvyEmLIuoBQSyVDLT12+Ta+JTYJrFk7CqCviRlAAik0OsrFp18WHgHy3Ci2ECa6spXGneen+a2N28F0Vf3KWeNoW8bGY+Sk1Od6eIO7xaEH+4SoVf/tlzokTh+Pgu/GyWFujQKel9S/ZIzKrAV9blqfqc2DhIFLnYQlgUuRO5E5oVeiBqZwcvT5Q4rmjc8sPCNNFecsNr42YGdJTDrtiqFlz0E3xaP6P5sqUekxJ4iAE5GTjq0J7sieRfTjdIox1W23ObGsJhROvFVtj6tTQFOyVCfm8Xr0AIurlLp+7FTzy27clD33+kuz+Gi4fOmVbhJQhwcxzaFAyQW4k5kNrr8ArUW2ra8FBma8wR5fWSVg7RPoVjWh4yZft0ox8pr/5wUisAlcHVdi7xFK/PjTilQX+Jo46+8TN19TDuEO8Y6Fr4edE4duTxpswp7ZNqVamcpv4Z0+SVjHSoTYOTlCez/hMaFw1MgmRRBTRVbbUUYRJ/Rt2jxApIVFt+pXF+McouHVftual+Gqs6Ava2EtpsieyaHtVHGh5aLt+q75TdhiyN/Mm0LVjSiAhqdS8LG8JeqHcdxwB0F4HN4A87ZhfCTbpfSMiaGeCGiO5/NL8DSbPzGAOhXKWn7rPfs4B78mrIVbHF17xMp9NXfDCHdkAE9nkoSzHB6Z3KuKFLUbdDjd5oUeWqZSn5+dk8tFbrJ0YE3polc/8kNynRIy6sx2SgpCytgrZOgsOJqsXwPkPRKBbo0ATS0zqbiKxoLBXk7AOSuNg84JZ9vaKtmb5jN3t7RCS/6oNr+qvRuLx5Ywyw+nQnTEICVDSN2Tqy3jvehXVR3aonKBE7U6wkQuSrYoyBeAsiu05/uamvT+rJN/43xmFQHt2ly5VADLSh1VMQ9zjqDg/b8jc26YU/etGIemRhkOZDlvGueG1ccG9LDHp8IqVjQOek72Q30PyNS+X8WaXAppCBy7PpmM4YRL6RvHFEk9zr8c58MPqEmMK8QshU937rFc3H9lbs/nfd4tOqFsV+FxFNKcn8MfVBq1Y1rc9XLcqdqOCmFWAw67KAN6LTXYJAeviqwOjfnORW2lkpA8iCc886LnA63gXjg7xZkba32q2TW2p51re+cCCK45SDbSGN2GUUjS0mNbSDU4nnihmVg9lgr30X/wjgMYOR+2OndbD+YLyqumllYB/LRDg8PDlPZz0K5Tedsqc3L8ksoTUOKyidIF62RbDsGWM2cj1/dCBdI8M/vn7oPOGvqaf+OPVGEK8JptEERgbD0s7QsmlymQHIbdELeV9s0xUSL42js6TgyVJrzbEAvANnI6UInkHoyIXYdhj4ADZ1k/09NjLJuVjr5SFquk2j1Ykqfo+lu3FzzZo7QPfrES6uKgvx/gv+BOuvYow/FtiHBtvr/ljvM3OtASZW/fHraG2F5WuSpYXkHeex96AX3wPtu5mUObD34Wuu3UohgsAR2DSSodH5+CikhR7Pr/ByXGe1cEtHLBCOHs6vEFQA+eIgBL8GSqd3pW3NEOjfDyxT+H96c3BkiaG0+i/3NGh+OKyf130RpCIo+bgVFg8qgiPcz8Xtm1o1QkakOYMpfU229k20qDfbB1OwTawgaCLdoibcAYBG9WAQ93s+9242I7O5Po/CJg8RDEpgKFu4RCR5DlNmjN5J18GhPywIGWBkrkrhwDXcOwW/ixXlN1BR6gsKeOJincn9KXia3l75uGPXY87aFS66kzAf8wLGlBP95Q5ayeGwmF6xc1uYLjhuGSMvjjy3/RjFbA78Pvi/E2YIgH3a71yzAALTcy4vvXr+YnFuy8AWactMOFyVdXZ7FZZMua+fgqYs8fLB0iMdU3LS+jVXT+lCyfQZWu7PsQ9zawu7Qhqq4P+M+h4qR6F5b2ut9RDg8x+7YVsmulmeLUpFWFdonW7RgpHG1Y672ZaSAlknzU6MtyXHJQNOFkaRg3lhcjD2YaTT8n7t6DCuvgTmuxWxlFkexviBH0ghHUBHMEvKUQpts0D0bONcvqGhMh5E94fRmcOKHhMzs9YtpgvG6lvV+pNDKozWbfxJR3hh7x6NM9Ed7CYAVHqIDt9y5molFERrgyXkmmdXoBpgcM4cedkR9u+2SMkjqmgpri/QDT0VYCrU/gqqARdYP/UWVj3xwpPaQBdgRUNCkqeGWICxCtywkoB1GiS5DmTB+GDujlk3JDIr+QtsDx+SwnlL2fsdxWngDkdgtS6Z+kYvpbRkFOPfkW/AStRoQuyugc3qLjxpSDoX7N43RFnGHb2E+NUEsfS05s0/b+8cxzWqPL6H9cBDhWSZixzjDaQQpf0jIBPK7Z3LH6gWJwFazv8cF3jDknNjmyrVt/3lNQldWMSIf7EJhM9ggflhpIPjvXvuLDi5gSNaSeUL2uzBaKRFUP9flAcEHttRmiukl8i0Urnhcigq1L5eWcLRO5XMvVxUBNHGfpwEMaMSQj0opWee/GUEIY+tY14sg5T6xK2qk0kdri4H2Pyk3gUH7HMaoWChSUKimd7WjCo/FNe29epkwxIO5CQ6dVqNGwAlEzPoLcBm3dYGaQgXbm3ihVm1ri0S1Bp92z9oSKajcEqBQ8a22RJPDROpybo1f+iGxA/YdIn0BKoULPNEa/M6RE/rRUR7Rh+1hkiJl0CVU6d7TKPM6a3eKcib+a6a3I+RKO1Eal+nKEdEt8++6W8qdIRcU9+kUuEm5yKcxe/8wKm2QRvPh82Fr1CwtbMX0RjXJcmx3LV+fuIAP+NKKnSDNojERLhsuNON4Wdb7f4ETAG1CGIz521z3Xi7vn2kUb7vhW0uDizmqj5UTw8nf4UBJgoGWfihw7tS35KF9mx0a8YUX1OcBCosyrsN9C1Kumgnrs42botrdGS6v0ysjTiG6d0RcFn3tpQSoY7mkUnPiWkzhehUchjYgbHtUNuA9YU0Mt4AjdYugSQYskZk0Cold0Sl1FcuuKAkTfFHVT23abWGviUO/gvSjF/83mZeGvFFHcV1t61E+XgAOJn7e+TUc1GIE0cf/CIXo7xmNiNpOkQ9GrTyD8IdjXJnzi7ERJXt+svTAORCnBG2voDZTx+qkMDIlOmD4EImQv32WOzcN1SEjGX5vB9IwNGt3qjs6WiSK1gYXIl3XK66kJkR4ws+RS2PakM5hvh/LujqdAxwHy+DAdaw5LuSguvA/lmuAYbU3Xd6AI7l2GoOfkW0YCrOHXu8bcyyFQVk0vB/G3oxWM8yS5elVAFL7t/Lx4OAHJrdaA+9Y9YnLtqj8hWsQLbjnhCvv8e5F8Qz6flDwHp/D1DQjSnsgGwWQ/ytx97cgcTqugN464+X8eIwarELCNrXigNphH+vOrGc48z5jdnoPOQsid0m+qd6m2xrM3WIjwQ1Th+/6m6mhaOPUUXVzB3I/+2/VOLeZ2GUtxDEsfIkYwtldb0WzZon2XwahHGWICzTmv2qRvU8geXjfmsheQBsl8UKg6cajgxR6mBIrtNTJKxZN5CchEvuKf63ZtvTqPTjbMZiE0qsIoSJzogQrglwt3j17rMa2R1F5p3thd8oGbaHheI9mwXTDKER0bOY8xEj1X12ZOVhml8Zx/mhP+OISvGOKaDU/sS03Q3Qg30elYWPPwAKl/ptWWio1tTkjeXNz8dowXGEtV5Xoptajj/fNt38kdGIyhn6H0zl1IuOrTdqgCABJyt0yMr9P2LNvgd8QPlYd7EeJepWuGXiXoLo7ZoLyeG2aIDCc8sNBIZy1QUqotGFgUyvnQDaU7NpixRMt+LSSJ8bdy4LyTUQsXhSmj8sHRtKyumqvwOqtBeZQUkgqr8NwYz4aGkE4XcsqyR60S8gknbYFoRKE6VFGbUjGW5pSWxWtsQUziiaEw1hzzCMEJ99feBlBJ0foThY2HO9UC5EZFZSAjBKJk5wCoT8Y0ubh/JhqtH5wKGK92DF+ZaFw1P0CP2WmKI0joDwCkQz/vqYCZdBzeTD7oskC67w/s1i6ZMV39wZ7Rp82oN0VnEIYb6XI90dL5FOokrsk4Y+Blv4SfEOiIgkh9T05G1wdpzEbD+xj1g0OqerG4N/KHupx7vzHDLSQJs/cIDWLhQImPeqQwDR/KNMLWNVtyODOHRuV3Zb9MzpYmCBk9ja7Qm23p5oPnhIJdw6cJA0wUE7ddb1q7qd44cbPPmE63mMF0piut2ELPCYLXKO6wH/V+EtMKb7GD+6OSBPz/ecb2wx3T8hReFNTDlvdjQTIhQJDy8wbWOCFD36QPqiJBvogIkBuKRzLJ0tiqdFS0xJaPHgkfO9HrQwC+Ssshi61IDNecvPBVudKZ0Le2H6FwWYrfYvlDFNGqW/JP2IhYkHRW86/A8DVpqGrFgp6uRBpNC+mly0UrHpiiAo6iLg/P7CxFGvw++1ogtRR8jk477T23nb0ki0kQ4xCw4/LNVlKv3RJ4jl+P2Pk+oi2jpjEY+fE0XNieo926TkADWtyHJVAB3WoTE+vnowKsDC/4YXpfLi2qKfV40WVdy+ZKRIDfvegsau94zyY14gMwsP4nTQkO08zSkaEokRc7dyHSNnGMmEcm0LzLojdhrguNxi1Ag5R2Af9Wt/3+8WCRBtiesGJC4brnF6qD+vAO4/7El8J/YfEZXfd2PKCkVRDA2FuP4J8D+1DWk3DJLaykvdSeCejO6v30cItUyZr1VUXxkJexujPPzPG+s4W5mnM7mwMNUCdZbV3CEuBgb6PG6VqEuyn/zeDpRIMSWciJ86Eh7U+qKz/wenVSo2fM0ukDXGuE6MYqn9Bczwyx0Bh6GQZwWoT6eheW5KfMp813zH0azhstPlOc2et7bKNh088hO0+igHcmsSDC+Pxjn5YCJpBhrU32VqN6K4TW2bqlWY6NZiomVmJm6y8ftmNfrAE2HUP8axEKHQbQvMSg+EvzBEmrOtYneFM/iuuxDbkP9fQvOUE9s9E18yW1z/jR1hq3oz3PRuLNtUz6RAgSNlqC6Wfq7PLEg1FCFHXR4QIs1kQqCK2TDfHyY/0JQLnXB6Ks5HORLs7f/xapBSNo+LOmxDM+Dtd7dRCSfAtYqMBP65YBFMb0BrqcdDXInCfmtUh5/n4v4wwFChvbT94YP4wz+cs66uc2bb6L+k8WRmjC5FwyeqCBDJ2PMA+aAphhjuhZFVYUuPf0B9PI8Y57ZDcdbeuubvtrDX5OM4r4ZccWZH/T1eCMWCjT1+6a8nEdh606Wl7/r/lgBEf7S8SVYz1NT4VE7dOJyLDeCUFM/69t8ej9m7MQK/vPr1swEzhBl+cE+LuOj49OpWc3up07ts5RB457s/gKgqakqiYrfY0J/Awken2WUNEhlPbG8kG0sf2gbb3BOnIs05isg8+UtQjNQjTP2kaDcu6+1DKVBkei2K7Nxgqsqq/zOghHObECl1KnRfJgdEzP3Af/C7oOODKNDvbzng2k9DF8ngDyl3Ik4dPDks/mCsPejcW5YRn+vhUJ3wUB2wKUnVT8Yb9pYjEBdse4a0stmW8SZg09j0zTMHs6YNQi2nnp2ZTGqNggZORDyU4GCWS6MlmzhgeI+40aPQdWZbzJazbccvv/pKMCfKIkf5Oo8WWU4W1Z4tgOa7PYFXkmySejc849CzezIWSdqfjoorpEvKesoWM/OWSOJf08S1Be1fRVj2bGthcJonUdyrqWKld4sQKujA+hq6xKJa8e2LOPGVdg/x8s6JIODpjjDeoop4hEny99EDxxvEBCowCNabJlZ1YvBVNKIP+exTLx8sfuAbut+h7Efl4q4htWtXPulWyRrW9pfUl15X97DsvE9mOwIdWoOOQwDf7TCmRClCTCH+O9ukA5FveF3zUWLS+01hK+KZ9USGSc8QBTROht8jqqU1R1AbBBgR5C9LCJtT1RtwkNOYx/Sh6O9e3XMYr/fYhLdOLoCeUwIv240smtvJ3P/i/nRqtH+5ZCxuw1rDeLIet9toxTpzd6u+vg9UGDQ2pQ3dBUAnGP+OkeKV0Hc0G1r3UUO3sjP0EiY8GJkimcvj8iLlTrhQD5rwBFXIo+UUAaJr3U6zBi4896xy2guWQH0F0KJgAAAA=" alt="Phillip Kim, PharmD, pharmacist and Pharmacy Director at WellnessRX Pharmacy in Bradford" width="76" height="76" loading="lazy">
+            <div><p class="mono">Co-founder</p><h3>Phillip Kim</h3><p class="cred">PharmD · Pharmacy Director</p></div>
+          </div>
+          <p class="bio">Ten years in community pharmacy, including multi-store operations, and a clinical instructor with the University of Toronto pharmacy program. Focused on medication management, minor ailment prescribing, diabetes and cardiovascular support, and on catching the supplement–medication interactions that usually go unnoticed.</p>
+          <p class="bio">Phillip reviews what you take as a whole, prescriptions and supplements together, and keeps your plan simple enough to stick with.</p>
+          <ul class="chips" aria-label="Phillip's focus areas"><li>Minor ailment prescribing</li><li>Medication reviews</li><li>Diabetes support</li><li>Heart health</li><li>Supplement–drug interactions</li></ul>
+          <div class="p-links">
+            <a class="arrow" href="https://www.wellnessrxpharmacy.ca/meet-phillip-kim-pharmacist-bradford" target="_blank" rel="noopener">Meet Phillip →</a>
+            <a class="arrow" href="https://www.wellnessrxpharmacy.ca/service-page/minor-ailment-prescribing-bradford" target="_blank" rel="noopener">Book an assessment →</a>
+          </div>
+        </article>
+        <article class="person">
+          <div class="p-top">
+            <img src="data:image/webp;base64,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" alt="Nancy Tran, RHN, Registered Holistic Nutritionist at WellnessRX Pharmacy in Bradford" width="76" height="76" loading="lazy">
+            <div><p class="mono">Co-founder</p><h3>Nancy Tran</h3><p class="cred">RHN · Holistic Nutritionist</p></div>
+          </div>
+          <p class="bio">Registered Holistic Nutritionist (Canadian School of Natural Nutrition, 2019) and Strength &amp; Conditioning Specialist, with 5+ years of nutrition and wellness coaching. Nancy is the voice behind the Holistic Pharmacy &amp; Nutrition Podcast and co-founded WellnessRX to bring nutrition and pharmacy care into the same room.</p>
+          <p class="bio">She works with women's hormonal health, gut health, weight and body composition (fat loss and muscle building), and pregnancy and postpartum wellness. Every plan is built around your real schedule and checked with Phillip against your medications, with a realistic, long-term approach rather than an extreme one.</p>
+          <ul class="chips" aria-label="Nancy's focus areas"><li>Hormonal health</li><li>Gut health</li><li>Fat loss &amp; muscle</li><li>Pregnancy &amp; postpartum</li><li>Supplement education</li><li>Meal planning</li></ul>
+          <div class="p-links">
+            <a class="arrow" href="https://www.wellnessrxpharmacy.ca/meet-nancy-tran-rhn-bradford" target="_blank" rel="noopener">Meet Nancy →</a>
+            <a class="arrow" href="https://www.wellnessrxpharmacy.ca/nutrition-consultation-bradford" target="_blank" rel="noopener">Book a nutrition consult →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · AS FEATURED IN (new) -->
+  <section class="press" aria-labelledby="wrx-press-title">
+    <div class="wrap">
+      <p class="mono">As featured in</p>
+      <h2 id="wrx-press-title">What others are saying about us</h2>
+      <div class="press-grid">
+        <a class="pc" href="https://canadianhealthcarenetwork.ca/husband-and-wife-team-bring-nutrition-and-pharmacy-services-together" target="_blank" rel="noopener"><p class="mono">Canadian Healthcare Network</p><h3>Husband and wife team up to bring nutrition and pharmacy services together</h3><span class="arrow">Read →</span></a>
+        <a class="pc" href="https://www.bradfordtoday.ca/local-news/wellnessrx-pharmacy-expanding-to-meet-growing-demand-for-health-care-in-bradford-12403597" target="_blank" rel="noopener"><p class="mono">BradfordToday</p><h3>WellnessRX Pharmacy expanding to meet growing demand for health care in Bradford</h3><span class="arrow">Read →</span></a>
+        <a class="pc" href="https://www.bradfordtoday.ca/whats-up-wednesday/whats-up-wednesday-consider-a-holistic-approach-to-your-health-care-5351780" target="_blank" rel="noopener"><p class="mono">BradfordToday</p><h3>Consider a holistic approach to your health care</h3><span class="arrow">Read →</span></a>
+        <a class="pc" href="https://csnn.ca/alumni-profiles/nancy-tran/" target="_blank" rel="noopener"><p class="mono">CSNN alumni</p><h3>Nancy Tran, RHN: graduate profile</h3><span class="arrow">Read →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 · FAQ (new, mirrors FAQPage schema) -->
+  <section class="faq" aria-labelledby="wrx-faq-title">
+    <div class="wrap">
+      <div>
+        <p class="mono">Questions we hear every day</p>
+        <h2 id="wrx-faq-title">Good to know before you visit</h2>
+      </div>
+      <div>
+        <details open><summary>Can a pharmacist prescribe for minor ailments in Ontario?</summary><p>Yes. Since July 1, 2026, Ontario pharmacists can assess and, where appropriate, prescribe for 28 minor ailments, including UTIs, pink eye, cold sores, acne, allergies and acid reflux. At WellnessRX it's a 30-minute visit with Phillip Kim, PharmD, free with a valid Ontario health card ($19 without one). <a href="https://www.wellnessrxpharmacy.ca/service-page/minor-ailment-prescribing-bradford" target="_blank" rel="noopener">Book an assessment</a>.</p></details>
+        <details><summary>How do I transfer my prescription to WellnessRX?</summary><p>Fill in our <a href="https://docs.google.com/forms/d/e/1FAIpQLSfb_YF65iRw2ku84DHfj9YcXC15j3oOM-yJAieQ3Ngy7BDOtA/viewform" target="_blank" rel="noopener">prescription transfer form</a> with a photo of your bottle or the name of your current pharmacy. We contact them, move everything over and can set up blister packs if you want them. There's no cost to transfer.</p></details>
+        <details><summary>Is a nutrition consultation covered by OHIP?</summary><p>No. Nutrition visits with Nancy Tran, RHN are paid privately: $120 for a 60-minute in-person consultation, $75 virtual, and $65 for a 30-minute follow-up. Some extended health plans cover nutrition counselling, so we give you a detailed receipt to submit. <a href="https://www.wellnessrxpharmacy.ca/nutrition-consultation-bradford" target="_blank" rel="noopener">See nutrition consultations</a>.</p></details>
+        <details><summary>What's the difference between seeing the pharmacist and the nutritionist?</summary><p>Phillip, our pharmacist, handles prescriptions, minor ailments, medication reviews and vaccines. Nancy, our Registered Holistic Nutritionist, builds food, lifestyle and supplement plans for goals like hormones, gut health, weight and pregnancy. They work together, so your nutrition plan is checked against your medications.</p></details>
+        <details><summary>Will you check my supplements against my medications?</summary><p>Yes. Every product on our Pharmacist's Picks shelf is screened against common prescriptions, and you can book a 30-minute <a href="https://www.wellnessrxpharmacy.ca/service-page/supplement-review-bradford" target="_blank" rel="noopener">Supplement Review</a> ($55) where we go through everything you take.</p></details>
+        <details><summary>Do you offer flu shots?</summary><p>Yes. Flu shots are free for anyone who lives, works or studies in Ontario, and COVID vaccines are available based on eligibility. <a href="https://www.wellnessrxpharmacy.ca/service-page/vaccination-services-bradford" target="_blank" rel="noopener">Book a vaccination appointment</a>.</p></details>
+        <details><summary>What is a MedsCheck and who qualifies?</summary><p>A MedsCheck is a free 30-minute, one-on-one review of all your medications with a pharmacist. It's for Ontario residents taking three or more prescription medications for chronic conditions. <a href="https://www.wellnessrxpharmacy.ca/service-page/book-medscheck-review-bradford" target="_blank" rel="noopener">Book a MedsCheck</a>.</p></details>
+        <details><summary>I'm not sure what I need. Where do I start?</summary><p>Book the free <a href="https://www.wellnessrxpharmacy.ca/service-page/free-wellness-call-bradford" target="_blank" rel="noopener">15-minute wellness call</a>. It's a quick, no-obligation chat that points you to the right service, whether that's the pharmacist, the nutritionist or neither.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 · CLOSING CTA -->
+  <section class="close" aria-labelledby="wrx-close-title">
+    <div class="wrap">
+      <h2 id="wrx-close-title">Still not sure which one you need?</h2>
+      <p>Book a free 15-minute wellness call. We'll tell you whether it's a pharmacist visit, a nutrition consult, or something you can fix without buying anything at all.</p>
+      <div class="ctas">
+        <a class="btn btn-w" href="https://www.wellnessrxpharmacy.ca/service-page/free-wellness-call-bradford" target="_blank" rel="noopener">Book a free 15-min call</a>
+        <a class="btn btn-line" href="tel:+19057757874" target="_blank" rel="noopener">Call 905-775-7874</a>
+      </div>
+    </div>
+  </section>
+
+</div>
